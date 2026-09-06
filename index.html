@@ -12,6 +12,9 @@
   --pink: #ff2f9f;
   --teal: #00f5d4;
   --yellow: #ffe600;
+  --orange: #ff6b1a;
+  --violet: #b14aed;
+  --lime: #c6ff00;
   --white: #fff;
   --grey: #161616;
 }
@@ -70,7 +73,7 @@ body {
   left: 63%;
   transform: rotate(14deg);
 }
-  
+
 .square-2 {
   width: 32px;
   height: 32px;
@@ -286,14 +289,35 @@ h1 {
   transform: translate(-3px, -3px) rotate(-1deg);
 }
 
-.event:nth-child(2n) {
-  background: var(--pink);
-  box-shadow: 5px 5px 0 var(--teal);
-}
-
-.event:nth-child(2n + 1) {
+.event:nth-child(6n+1) {
   background: var(--yellow);
   box-shadow: 5px 5px 0 var(--pink);
+}
+
+.event:nth-child(6n+2) {
+  background: var(--pink);
+  box-shadow: 5px 5px 0 var(--teal);
+  color: var(--white);
+}
+
+.event:nth-child(6n+3) {
+  background: var(--teal);
+  box-shadow: 5px 5px 0 var(--orange);
+}
+
+.event:nth-child(6n+4) {
+  background: var(--orange);
+  box-shadow: 5px 5px 0 var(--violet);
+}
+
+.event:nth-child(6n+5) {
+  background: var(--violet);
+  box-shadow: 5px 5px 0 var(--lime);
+}
+
+.event:nth-child(6n) {
+  background: var(--lime);
+  box-shadow: 5px 5px 0 var(--yellow);
 }
 
 .event-title {
@@ -353,18 +377,33 @@ h1 {
   transform: translateY(-5px) rotate(-1deg);
 }
 
-.event-card:nth-child(1) {
+.event-card:nth-child(6n+1) {
   background: var(--yellow);
   box-shadow: 9px 9px 0 var(--pink);
 }
 
-.event-card:nth-child(2) {
+.event-card:nth-child(6n+2) {
   background: var(--pink);
   box-shadow: 9px 9px 0 var(--teal);
 }
 
-.event-card:nth-child(3) {
+.event-card:nth-child(6n+3) {
   background: var(--teal);
+  box-shadow: 9px 9px 0 var(--orange);
+}
+
+.event-card:nth-child(6n+4) {
+  background: var(--orange);
+  box-shadow: 9px 9px 0 var(--violet);
+}
+
+.event-card:nth-child(6n+5) {
+  background: var(--violet);
+  box-shadow: 9px 9px 0 var(--lime);
+}
+
+.event-card:nth-child(6n) {
+  background: var(--lime);
   box-shadow: 9px 9px 0 var(--yellow);
 }
 
@@ -554,14 +593,14 @@ h1 {
   }
 
   .day {
-    min-height: 75px;
-    padding: 4px;
+    min-height: 95px;
+    padding: 5px;
   }
 
   .day-number {
-    width: 25px;
-    height: 25px;
-    font-size: 11px;
+    width: 27px;
+    height: 27px;
+    font-size: 12px;
   }
 
   .event {
@@ -572,7 +611,12 @@ h1 {
   }
 
   .event-title {
-    font-size: 6px;
+    font-size: 9px;
+    line-height: 1.15;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .event-time {
@@ -1119,14 +1163,14 @@ const events = {
     venue: "Niche Bistro, Calangute",
     url: "https://in.bookmyshow.com/events/oversmartgiri-by-aditya-gundeti/ET00473415"
   },
-  
-   "2026-09-23": {
+
+  "2026-09-23": {
     title: "COMEDY SLAM",
     time: "8:00 PM",
     venue: "OWT, Siolim",
     url: "https://in.bookmyshow.com/events/comedy-slam-owt-siolim/ET00514508"
-   }
-  
+  }
+
 };
 
 
