@@ -973,37 +973,72 @@ h1 {
   width: 100%;
   min-width: 0;
   display: block;
-  background: var(--black);
-  border: 3px solid var(--white);
-  box-shadow: 8px 8px 0 var(--pink);
+  padding: 10px;
+  background: var(--pink);
+  border: 3px solid var(--black);
+  box-shadow: 8px 8px 0 var(--teal);
   overflow: hidden;
   text-decoration: none;
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.home-instagram-post:nth-child(2) {
+/* Each Instagram post gets its own color from the site's existing palette */
+.home-instagram-post:nth-child(1) {
+  background: var(--pink);
   box-shadow: 8px 8px 0 var(--teal);
+}
+
+.home-instagram-post:nth-child(2) {
+  background: var(--teal);
+  box-shadow: 8px 8px 0 var(--orange);
 }
 
 .home-instagram-post:nth-child(3) {
-  box-shadow: 8px 8px 0 var(--yellow);
-}
-
-.home-instagram-post:nth-child(4) {
-  box-shadow: 8px 8px 0 var(--teal);
-}
-
-.home-instagram-post:nth-child(5) {
+  background: var(--yellow);
   box-shadow: 8px 8px 0 var(--pink);
 }
 
+.home-instagram-post:nth-child(4) {
+  background: var(--orange);
+  box-shadow: 8px 8px 0 var(--violet);
+}
+
+.home-instagram-post:nth-child(5) {
+  background: var(--violet);
+  box-shadow: 8px 8px 0 var(--lime);
+}
+
 .home-instagram-post:nth-child(6) {
+  background: var(--lime);
   box-shadow: 8px 8px 0 var(--yellow);
 }
 
 .home-instagram-post:hover {
   transform: translate(-3px, -3px);
+}
+
+.home-instagram-post:nth-child(1):hover {
+  box-shadow: 12px 12px 0 var(--teal);
+}
+
+.home-instagram-post:nth-child(2):hover {
+  box-shadow: 12px 12px 0 var(--orange);
+}
+
+.home-instagram-post:nth-child(3):hover {
   box-shadow: 12px 12px 0 var(--pink);
+}
+
+.home-instagram-post:nth-child(4):hover {
+  box-shadow: 12px 12px 0 var(--violet);
+}
+
+.home-instagram-post:nth-child(5):hover {
+  box-shadow: 12px 12px 0 var(--lime);
+}
+
+.home-instagram-post:nth-child(6):hover {
+  box-shadow: 12px 12px 0 var(--yellow);
 }
 
 .home-instagram-post .instagram-media {
@@ -1186,11 +1221,11 @@ h1 {
     </a>
   
 <a class="home-instagram-post"
-       href="https://www.instagram.com/p/DYWvlHvMz-r/"
+       href="https://www.instagram.com/reel/DYWvlHvMz-r/"
        target="_blank"
        rel="noopener noreferrer">
       <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/p/DYWvlHvMz-r/"
+        data-instgrm-permalink="https://www.instagram.com/reel/DYWvlHvMz-r/"
         data-instgrm-version="14"></blockquote>
     </a>
     
