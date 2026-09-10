@@ -918,6 +918,167 @@ h1 {
     bottom: 15%;
   }
 }
+
+
+/* =========================
+   HOMEPAGE INSTAGRAM DUMP
+   ========================= */
+
+.home-instagram {
+  width: 100%;
+  margin: 75px 0 75px;
+}
+
+.home-instagram-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 0 8px;
+}
+
+.home-instagram-heading h2 {
+  margin: 0;
+  color: var(--pink);
+  font-size: clamp(28px, 5vw, 45px);
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.home-instagram-heading span {
+  flex: 1;
+  height: 5px;
+  background: var(--teal);
+}
+
+.home-instagram-handle {
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--teal);
+}
+
+.home-instagram-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: 75px;
+  gap: 12px;
+}
+
+.home-instagram-post {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  border: 3px solid var(--white);
+  text-decoration: none;
+  transform: rotate(var(--ig-rotation));
+  transition: transform .2s ease, z-index .2s ease;
+  z-index: 1;
+}
+
+.home-instagram-post:hover {
+  transform: rotate(0deg) scale(1.025);
+  z-index: 20;
+}
+
+.home-instagram-post img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #111;
+  transition: transform .3s ease;
+}
+
+.home-instagram-post:hover img {
+  transform: scale(1.04);
+}
+
+.home-instagram-post:nth-child(4n + 1) {
+  border-color: var(--pink);
+}
+
+.home-instagram-post:nth-child(4n + 2) {
+  border-color: var(--teal);
+}
+
+.home-instagram-post:nth-child(4n + 3) {
+  border-color: var(--yellow);
+}
+
+.home-instagram-post:nth-child(4n + 4) {
+  border-color: var(--white);
+}
+
+.home-instagram-loading,
+.home-instagram-error {
+  grid-column: 1 / -1;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.home-instagram-loading {
+  color: var(--teal);
+}
+
+.home-instagram-error {
+  padding: 30px 20px;
+  border: 3px solid var(--pink);
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .home-instagram {
+    margin: 60px 0;
+  }
+
+  .home-instagram-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: 80px;
+    gap: 9px;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-instagram {
+    margin: 50px 0;
+  }
+
+  .home-instagram-heading {
+    gap: 10px;
+  }
+
+  .home-instagram-heading h2 {
+    font-size: 28px;
+  }
+
+  .home-instagram-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 170px;
+    gap: 7px;
+  }
+
+  .home-instagram-post {
+    transform: none;
+  }
+
+  .home-instagram-post:hover {
+    transform: scale(1.015);
+  }
+}
+
 </style>
 </head>
 
@@ -1010,8 +1171,36 @@ h1 {
 
 
   <section class="event-list" id="eventList"></section>
+<!-- =================================================
+     LIVE INSTAGRAM PHOTO DUMP
+     Between THIS MONTH and FOLLOW US
+================================================== -->
+
+<section class="home-instagram">
+
+  <div class="home-instagram-heading">
+    <h2>INSTAGRAM DUMP</h2>
+    <span></span>
+  </div>
+
+  <div class="home-instagram-handle">
+    @GOANCOMEDYCARTEL
+  </div>
+
+  <div id="homeInstagramGrid" class="home-instagram-grid">
+
+    <div class="home-instagram-loading">
+      LOADING INSTAGRAM…
+    </div>
+
+  </div>
+
+</section>
+
+
 
 </main>
+
 
 
 <!-- MODAL -->
@@ -1709,6 +1898,266 @@ document
 
     }
   );
+
+
+
+/* ==========================================
+   HOMEPAGE INSTAGRAM DUMP
+========================================== */
+
+const HOME_INSTAGRAM_FEED =
+  "https://feeds.behold.so/XpvkXbkAMnly2XVCoUAv";
+
+const HOME_INSTAGRAM_MAX_POSTS = 12;
+
+
+const HOME_IG_LAYOUTS = [
+
+  { columns: "span 4", rows: "span 3" },
+  { columns: "span 3", rows: "span 4" },
+  { columns: "span 5", rows: "span 3" },
+  { columns: "span 3", rows: "span 3" },
+  { columns: "span 4", rows: "span 4" },
+  { columns: "span 5", rows: "span 3" },
+  { columns: "span 3", rows: "span 4" },
+  { columns: "span 4", rows: "span 3" },
+  { columns: "span 5", rows: "span 4" },
+  { columns: "span 3", rows: "span 3" },
+  { columns: "span 4", rows: "span 3" },
+  { columns: "span 3", rows: "span 4" }
+
+];
+
+
+const HOME_IG_ROTATIONS = [
+  "-0.8deg",
+  "0.5deg",
+  "-0.4deg",
+  "0.7deg",
+  "-0.6deg",
+  "0.3deg"
+];
+
+
+function getHomeInstagramImage(post) {
+
+  if (
+    post.sizes &&
+    post.sizes.large &&
+    post.sizes.large.mediaUrl
+  ) {
+    return post.sizes.large.mediaUrl;
+  }
+
+  if (
+    post.sizes &&
+    post.sizes.medium &&
+    post.sizes.medium.mediaUrl
+  ) {
+    return post.sizes.medium.mediaUrl;
+  }
+
+  return post.mediaUrl || null;
+
+}
+
+
+async function loadHomeInstagram() {
+
+  const container =
+    document.getElementById("homeInstagramGrid");
+
+  if (!container) return;
+
+
+  try {
+
+    const response =
+      await fetch(
+        HOME_INSTAGRAM_FEED +
+        "?t=" +
+        Date.now(),
+        {
+          method: "GET",
+          cache: "no-store"
+        }
+      );
+
+
+    if (!response.ok) {
+      throw new Error(
+        "Feed returned " +
+        response.status
+      );
+    }
+
+
+    const data =
+      await response.json();
+
+
+    if (
+      !data ||
+      !Array.isArray(data.posts)
+    ) {
+      throw new Error(
+        "No posts found"
+      );
+    }
+
+
+    const posts =
+      data.posts
+        .filter(function(post) {
+          return (
+            post &&
+            post.visibility !== "hidden"
+          );
+        })
+        .slice(
+          0,
+          HOME_INSTAGRAM_MAX_POSTS
+        );
+
+
+    if (!posts.length) {
+      throw new Error(
+        "No Instagram posts available"
+      );
+    }
+
+
+    renderHomeInstagram(
+      posts,
+      container
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Homepage Instagram error:",
+      error
+    );
+
+
+    container.innerHTML = `
+      <div class="home-instagram-error">
+        INSTAGRAM FEED UNAVAILABLE
+      </div>
+    `;
+
+  }
+
+}
+
+
+function renderHomeInstagram(
+  posts,
+  container
+) {
+
+  container.innerHTML = "";
+
+
+  posts.forEach(
+    function(post, index) {
+
+      const imageURL =
+        getHomeInstagramImage(post);
+
+
+      if (!imageURL) return;
+
+
+      const link =
+        document.createElement("a");
+
+
+      link.className =
+        "home-instagram-post";
+
+
+      link.href =
+        post.permalink ||
+        "https://www.instagram.com/goancomedycartel/";
+
+
+      link.target =
+        "_blank";
+
+
+      link.rel =
+        "noopener noreferrer";
+
+
+      const layout =
+        HOME_IG_LAYOUTS[
+          index % HOME_IG_LAYOUTS.length
+        ];
+
+
+      link.style.gridColumn =
+        layout.columns;
+
+
+      link.style.gridRow =
+        layout.rows;
+
+
+      link.style.setProperty(
+        "--ig-rotation",
+        HOME_IG_ROTATIONS[
+          index % HOME_IG_ROTATIONS.length
+        ]
+      );
+
+
+      const image =
+        document.createElement("img");
+
+
+      image.src =
+        imageURL;
+
+
+      image.alt =
+        "Goan Comedy Cartel Instagram post";
+
+
+      image.loading =
+        index < 6
+          ? "eager"
+          : "lazy";
+
+
+      image.decoding =
+        "async";
+
+
+      image.onerror =
+        function() {
+          link.style.display = "none";
+        };
+
+
+      link.appendChild(image);
+
+      container.appendChild(link);
+
+    }
+  );
+
+}
+
+
+loadHomeInstagram();
+
+
+setInterval(
+  loadHomeInstagram,
+  10 * 60 * 1000
+);
 
 
 /* ==========================================
