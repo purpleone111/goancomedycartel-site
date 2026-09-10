@@ -548,6 +548,20 @@ h1 {
   color: var(--black);
 }
 
+/* Shown in place of the ticket button once a show's date has passed */
+.modal .event-ended {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--black);
+  background: transparent;
+  border: 3px solid var(--black);
+  padding: 12px 16px;
+}
+
 /* =========================
    MOBILE
 ========================= */
@@ -1038,6 +1052,14 @@ h1 {
       GET TICKETS →
     </a>
 
+    <span
+      id="modalEnded"
+      class="event-ended"
+      style="display: none;"
+    >
+      SHOW HAS ENDED
+    </span>
+
   </div>
 
 </div>
@@ -1164,6 +1186,9 @@ const modalVenue =
 const modalTickets =
   document.getElementById("modalTickets");
 
+const modalEnded =
+  document.getElementById("modalEnded");
+
 
 /* ==========================================
    HELPERS
@@ -1204,6 +1229,25 @@ function formatDate(dateString) {
 }
 
 
+/*
+  A show counts as "past" only once its whole day has
+  finished (23:59:59 in the visitor's local time), so it
+  still shows normally all day on the day of the show itself.
+  Because this checks against new Date() on every page load,
+  the site updates itself automatically — nothing to edit
+  manually once a show date has gone by.
+*/
+
+function isPastEvent(key) {
+
+  const endOfShowDay =
+    new Date(key + "T23:59:59");
+
+  return new Date() > endOfShowDay;
+
+}
+
+
 /* ==========================================
    OPEN EVENT
 ========================================== */
@@ -1228,6 +1272,23 @@ function openEvent(key) {
 
   modalTickets.href =
     event.url;
+
+
+  /* Hide the ticket button (and show an "ended" label instead)
+     once the show's date has passed. */
+
+  if (isPastEvent(key)) {
+
+    modalTickets.style.display = "none";
+    modalEnded.style.display = "inline-block";
+
+  } else {
+
+    modalTickets.style.display = "inline-block";
+    modalEnded.style.display = "none";
+
+  }
+
 
   modalOverlay.classList.add("active");
 
@@ -1410,7 +1471,10 @@ function renderCalendar() {
       );
 
 
-    /* Event */
+    /* Event — this tile keeps showing in the calendar grid
+       whether the show is upcoming or already happened, exactly
+       as before. Only the "This Month" list below and the
+       ticket button in the popup change once it's past. */
 
     if (events[key]) {
 
@@ -1522,9 +1586,14 @@ function renderEventList(year, month) {
             key + "T12:00:00"
           );
 
+        /* Only upcoming shows appear in the "This Month" grid —
+           once a show's date has passed it drops out of this
+           list automatically, no manual edit needed. */
+
         return (
           date.getFullYear() === year &&
-          date.getMonth() === month
+          date.getMonth() === month &&
+          !isPastEvent(key)
         );
 
       })
