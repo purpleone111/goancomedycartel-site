@@ -986,44 +986,65 @@ h1 {
   width: 100%;
   min-width: 0;
   display: block;
-  padding: 10px;
+  padding: 22px;
   background: var(--pink);
-  border: 3px solid var(--black);
-  box-shadow: 8px 8px 0 var(--teal);
+  border: 4px solid var(--black);
+  box-shadow: 9px 9px 0 var(--teal);
   overflow: hidden;
   text-decoration: none;
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
+/* Fixed crop window — hides as much of Instagram's own
+   white header/caption chrome as possible, showing mostly
+   just the photo/video. Instagram controls what's inside
+   this iframe, so the crop is approximate, not exact. */
+.home-instagram-crop {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.home-instagram-crop iframe {
+  position: absolute !important;
+  top: -58px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 560px !important;
+  border: 0 !important;
+}
+
 /* Each Instagram post gets its own color from the site's existing palette */
 .home-instagram-post:nth-child(1) {
   background: var(--pink);
-  box-shadow: 8px 8px 0 var(--teal);
+  box-shadow: 9px 9px 0 var(--teal);
 }
 
 .home-instagram-post:nth-child(2) {
   background: var(--teal);
-  box-shadow: 8px 8px 0 var(--orange);
+  box-shadow: 9px 9px 0 var(--orange);
 }
 
 .home-instagram-post:nth-child(3) {
   background: var(--yellow);
-  box-shadow: 8px 8px 0 var(--pink);
+  box-shadow: 9px 9px 0 var(--pink);
 }
 
 .home-instagram-post:nth-child(4) {
   background: var(--orange);
-  box-shadow: 8px 8px 0 var(--violet);
+  box-shadow: 9px 9px 0 var(--violet);
 }
 
 .home-instagram-post:nth-child(5) {
   background: var(--violet);
-  box-shadow: 8px 8px 0 var(--lime);
+  box-shadow: 9px 9px 0 var(--lime);
 }
 
 .home-instagram-post:nth-child(6) {
   background: var(--lime);
-  box-shadow: 8px 8px 0 var(--yellow);
+  box-shadow: 9px 9px 0 var(--yellow);
 }
 
 .home-instagram-post:hover {
@@ -1201,54 +1222,66 @@ h1 {
        href="https://www.instagram.com/p/Db8DzdjO6EE/"
        target="_blank"
        rel="noopener noreferrer">
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/p/Db8DzdjO6EE/"
-        data-instgrm-version="14"></blockquote>
+      <div class="home-instagram-crop">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/Db8DzdjO6EE/"
+          data-instgrm-version="14"></blockquote>
+      </div>
     </a>
 
     <a class="home-instagram-post"
        href="https://www.instagram.com/p/DbXe02qDbGT/?img_index=1"
        target="_blank"
        rel="noopener noreferrer">
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/p/DbXe02qDbGT/?img_index=1"
-        data-instgrm-version="14"></blockquote>
+      <div class="home-instagram-crop">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DbXe02qDbGT/?img_index=1"
+          data-instgrm-version="14"></blockquote>
+      </div>
     </a>
 
     <a class="home-instagram-post"
        href="https://www.instagram.com/p/Da-ErU_Nfv1/"
        target="_blank"
        rel="noopener noreferrer">
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/p/Da-ErU_Nfv1/"
-        data-instgrm-version="14"></blockquote>
+      <div class="home-instagram-crop">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/Da-ErU_Nfv1/"
+          data-instgrm-version="14"></blockquote>
+      </div>
     </a>
-    
-<a class="home-instagram-post"
+
+    <a class="home-instagram-post"
        href="https://www.instagram.com/p/DTatS0cDUX3/"
        target="_blank"
        rel="noopener noreferrer">
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/p/DTatS0cDUX3/"
-        data-instgrm-version="14"></blockquote>
+      <div class="home-instagram-crop">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DTatS0cDUX3/"
+          data-instgrm-version="14"></blockquote>
+      </div>
     </a>
-  
-<a class="home-instagram-post"
+
+    <a class="home-instagram-post"
        href="https://www.instagram.com/reel/DYWvlHvMz-r/"
        target="_blank"
        rel="noopener noreferrer">
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/reel/DYWvlHvMz-r/"
-        data-instgrm-version="14"></blockquote>
+      <div class="home-instagram-crop">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DYWvlHvMz-r/"
+          data-instgrm-version="14"></blockquote>
+      </div>
     </a>
-    
-      <a class="home-instagram-post"
+
+    <a class="home-instagram-post"
        href="https://www.instagram.com/p/DYQxcLyCGo_/"
        target="_blank"
        rel="noopener noreferrer">
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/p/DYQxcLyCGo_/"
-        data-instgrm-version="14"></blockquote>
+      <div class="home-instagram-crop">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DYQxcLyCGo_/"
+          data-instgrm-version="14"></blockquote>
+      </div>
     </a>
 
   </div>
