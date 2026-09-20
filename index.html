@@ -696,62 +696,83 @@ h1 {
 }
 
 /* =========================
-   INSTAGRAM SECTION
+   SOCIAL CTA SECTION
+   Instagram (left) + WhatsApp (right), side by side.
+   Stacks to one column on tablet/phone.
 ========================= */
 
-.gcc-instagram-wrapper {
+.gcc-cta-wrapper {
   width: 100%;
   background: var(--black);
 }
 
-.instagram-cta {
+.cta-section {
   position: relative;
   width: 100%;
-  min-height: 380px;
   margin: 0;
-  padding: 55px 5%;
+  padding: 60px 5%;
   background: var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
-.instagram-content {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 70px;
+.cta-grid {
   position: relative;
   z-index: 3;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 45px;
+  align-items: stretch;
 }
 
-.instagram-icon {
-  width: 150px;
-  height: 150px;
-  flex: 0 0 150px;
-  background: var(--pink);
+.cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+}
+
+.cta-icon {
+  width: 120px;
+  height: 120px;
+  flex: 0 0 120px;
   border: 7px solid #000;
-  box-shadow: 12px 12px 0 var(--teal);
   transform: rotate(-5deg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.cta-icon-ig {
+  background: var(--pink);
+  box-shadow: 12px 12px 0 var(--teal);
+}
+
+.cta-icon-wa {
+  background: var(--lime);
+  box-shadow: 12px 12px 0 var(--violet);
+}
+
+.cta-icon-wa svg {
+  width: 74px;
+  height: 74px;
+  display: block;
+}
+
 .instagram-camera {
-  width: 92px;
-  height: 92px;
+  width: 76px;
+  height: 76px;
   border: 7px solid #000;
   border-radius: 25px;
   position: relative;
 }
 
 .instagram-lens {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border: 7px solid #000;
   border-radius: 50%;
   position: absolute;
@@ -761,64 +782,87 @@ h1 {
 }
 
 .instagram-dot {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   background: #000;
   border-radius: 50%;
   position: absolute;
-  top: 13px;
-  right: 13px;
+  top: 11px;
+  right: 11px;
 }
 
-.instagram-copy {
-  text-align: left;
-}
-
-.instagram-kicker {
+.cta-kicker {
   font-family: Arial, sans-serif;
   font-weight: 900;
-  font-size: 17px;
+  font-size: 14px;
   letter-spacing: 3px;
   color: var(--teal);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.instagram-copy h2 {
+.cta-card-wa .cta-kicker {
+  color: var(--lime);
+}
+
+.cta-title {
   margin: 0;
   font-family: Arial Black, Arial, sans-serif;
   font-weight: 900;
-  font-size: clamp(48px, 7vw, 90px);
+  font-size: clamp(32px, 4.2vw, 56px);
   line-height: 0.88;
-  letter-spacing: -4px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.cta-card-ig .cta-title {
   color: var(--pink);
   text-shadow: 3px 3px 0 var(--teal);
 }
 
-.instagram-handle {
-  margin-top: 22px;
+.cta-card-wa .cta-title {
+  color: var(--lime);
+  text-shadow: 3px 3px 0 var(--violet);
+}
+
+.cta-handle {
+  margin-top: 16px;
   font-family: Arial, sans-serif;
   font-weight: 800;
-  font-size: 22px;
+  font-size: 18px;
   color: var(--white);
 }
 
-.instagram-button {
+.cta-button {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 20px;
   padding: 14px 25px;
-  background: var(--yellow);
   color: #000;
   border: 5px solid #000;
   font-family: Arial Black, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 900;
   text-decoration: none;
+  transition: 0.15s;
+}
+
+.cta-button-ig {
+  background: var(--yellow);
   box-shadow: 8px 8px 0 var(--pink);
 }
 
-.instagram-button:hover {
+.cta-button-ig:hover {
   transform: translate(3px, 3px);
   box-shadow: 5px 5px 0 var(--pink);
+}
+
+.cta-button-wa {
+  background: var(--teal);
+  box-shadow: 8px 8px 0 var(--violet);
+}
+
+.cta-button-wa:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 5px 5px 0 var(--violet);
 }
 
 .ig-shape {
@@ -831,104 +875,92 @@ h1 {
 
 .ig-pink {
   background: var(--pink);
-  right: 9%;
-  top: 15%;
+  right: 6%;
+  top: 12%;
   transform: rotate(17deg);
 }
 
 .ig-yellow {
   background: var(--yellow);
-  right: 17%;
-  bottom: 13%;
+  right: 12%;
+  bottom: 10%;
   transform: rotate(-12deg);
 }
 
 .ig-teal {
   background: var(--teal);
-  left: 8%;
-  bottom: 18%;
+  left: 5%;
+  bottom: 15%;
   transform: rotate(20deg);
 }
 
-/* PHONE */
+/* TABLET + PHONE — stack the two CTAs */
 
-@media (max-width: 700px) {
-  .instagram-cta {
-    min-height: 560px;
+@media (max-width: 800px) {
+  .cta-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .cta-section {
     padding: 50px 7%;
-    align-items: center;
   }
+}
 
-  .instagram-content {
-    flex-direction: column;
-    gap: 35px;
-    text-align: center;
-  }
-
-  .instagram-icon {
-    width: 125px;
-    height: 125px;
-    flex: 0 0 125px;
+@media (max-width: 520px) {
+  .cta-icon {
+    width: 100px;
+    height: 100px;
+    flex: 0 0 100px;
     border-width: 6px;
-    box-shadow: 10px 10px 0 var(--teal);
+    box-shadow: 9px 9px 0 var(--teal);
+  }
+
+  .cta-icon-wa {
+    box-shadow: 9px 9px 0 var(--violet);
+  }
+
+  .cta-icon-wa svg {
+    width: 60px;
+    height: 60px;
   }
 
   .instagram-camera {
-    width: 76px;
-    height: 76px;
+    width: 62px;
+    height: 62px;
     border-width: 6px;
   }
 
   .instagram-lens {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
     border-width: 6px;
   }
 
   .instagram-dot {
-    width: 9px;
-    height: 9px;
-    top: 11px;
-    right: 11px;
+    width: 8px;
+    height: 8px;
+    top: 9px;
+    right: 9px;
   }
 
-  .instagram-copy {
-    text-align: center;
-  }
-
-  .instagram-kicker {
-    font-size: 12px;
+  .cta-kicker {
+    font-size: 11px;
     letter-spacing: 2px;
   }
 
-  .instagram-copy h2 {
-    font-size: 48px;
-    letter-spacing: -3px;
-    text-shadow: 5px 5px 0 var(--teal);
+  .cta-title {
+    font-size: 38px;
+    letter-spacing: -1px;
   }
 
-  .instagram-handle {
-    font-size: 17px;
+  .cta-handle {
+    font-size: 16px;
   }
 
-  .instagram-button {
-    font-size: 15px;
+  .cta-button {
+    font-size: 14px;
     padding: 12px 20px;
-  }
-
-  .ig-pink {
-    right: 8%;
-    top: 8%;
-  }
-
-  .ig-yellow {
-    right: 10%;
-    bottom: 8%;
-  }
-
-  .ig-teal {
-    left: 8%;
-    bottom: 15%;
   }
 }
 
@@ -1348,34 +1380,71 @@ h1 {
 </div>
 
 
-<!-- INSTAGRAM -->
+<!-- =================================================
+     SOCIAL CTA — INSTAGRAM (LEFT) + WHATSAPP (RIGHT)
+================================================== -->
 
-<div class="gcc-instagram-wrapper">
-  <section class="instagram-cta">
+<div class="gcc-cta-wrapper">
+  <section class="cta-section">
 
-    <div class="instagram-content">
+    <div class="cta-grid">
 
-      <div class="instagram-icon">
-        <div class="instagram-camera">
-          <div class="instagram-lens"></div>
-          <div class="instagram-dot"></div>
+      <!-- INSTAGRAM -->
+      <div class="cta-card cta-card-ig">
+
+        <div class="cta-icon cta-icon-ig">
+          <div class="instagram-camera">
+            <div class="instagram-lens"></div>
+            <div class="instagram-dot"></div>
+          </div>
         </div>
+
+        <div class="cta-copy">
+          <div class="cta-kicker">MORE CHAOS ONLINE</div>
+
+          <h2 class="cta-title">FOLLOW US<br>ON INSTAGRAM</h2>
+
+          <div class="cta-handle">@goancomedycartel</div>
+
+          <a
+            class="cta-button cta-button-ig"
+            href="https://www.instagram.com/goancomedycartel/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FOLLOW US →
+          </a>
+        </div>
+
       </div>
 
-      <div class="instagram-copy">
-        <div class="instagram-kicker">MORE CHAOS ONLINE</div>
 
-        <h2>FOLLOW US<br>ON INSTAGRAM</h2>
+      <!-- WHATSAPP -->
+      <div class="cta-card cta-card-wa">
 
-        <div class="instagram-handle">@goancomedycartel</div>
+        <div class="cta-icon cta-icon-wa">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#000" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.548 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+        </div>
 
-        <a
-          class="instagram-button"
-          href="https://www.instagram.com/goancomedycartel/"
-          target="_blank"
-        >
-          FOLLOW US →
-        </a>
+        <div class="cta-copy">
+          <div class="cta-kicker">NEVER MISS A SHOW</div>
+
+          <h2 class="cta-title">JOIN OUR<br>WHATSAPP</h2>
+
+          <div class="cta-handle">Goan Comedy Cartel Updates</div>
+
+          <a
+            class="cta-button cta-button-wa"
+            href="https://chat.whatsapp.com/FiIIjuxzlEy50DzeE1SaVx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JOIN NOW →
+          </a>
+        </div>
+
       </div>
 
     </div>
