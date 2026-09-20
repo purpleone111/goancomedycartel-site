@@ -1201,6 +1201,7 @@ h1 {
 
 
   <section class="event-list" id="eventList"></section>
+
 <!-- =================================================
      SELECTED INSTAGRAM PHOTO DUMP
 ================================================== -->
@@ -1391,52 +1392,70 @@ h1 {
 
 /* ==========================================
    EVENTS
+
+   Each date key holds an ARRAY of shows, not a single
+   show — this is what lets two shows land on the same
+   date at different venues. To add another show on a
+   date that already has one, push another object into
+   that date's array rather than adding the date as a
+   new key (a plain object can only hold one value per
+   key, so a duplicate key silently overwrites the first
+   show — that was the bug that hid the Nook show).
 ========================================== */
 
 const events = {
 
-  "2026-09-11": {
-    title: "GOA'S FINEST @ BAREFOOT",
-    time: "7:30 PM",
-    venue: "Barefoot, Parra",
-    url: "https://in.bookmyshow.com/events/goa-s-finest-barefoot/ET00507157"
-  },
+  "2026-09-11": [
+    {
+      title: "GOA'S FINEST @ BAREFOOT",
+      time: "7:30 PM",
+      venue: "Barefoot, Parra",
+      url: "https://in.bookmyshow.com/events/goa-s-finest-barefoot/ET00507157"
+    }
+  ],
 
-  "2026-09-16": {
-    title: "COMEDY SLAM HOSTED BY NAVIN NORONHA",
-    time: "8:30 PM",
-    venue: "Nook, Guirim",
-    url: "https://in.bookmyshow.com/events/the-goated-mic/ET00479624"
-  },
+  "2026-09-16": [
+    {
+      title: "COMEDY SLAM HOSTED BY NAVIN NORONHA",
+      time: "8:30 PM",
+      venue: "Nook, Guirim",
+      url: "https://in.bookmyshow.com/events/the-goated-mic/ET00479624"
+    }
+  ],
 
-  "2026-09-19": {
-    title: "OVERSMARTGIRI BY ADITYA GUNDETI",
-    time: "7:00 PM",
-    venue: "Niche Bistro, Calangute",
-    url: "https://in.bookmyshow.com/events/oversmartgiri-by-aditya-gundeti/ET00473415"
-  },
+  "2026-09-19": [
+    {
+      title: "OVERSMARTGIRI BY ADITYA GUNDETI",
+      time: "7:00 PM",
+      venue: "Niche Bistro, Calangute",
+      url: "https://in.bookmyshow.com/events/oversmartgiri-by-aditya-gundeti/ET00473415"
+    }
+  ],
 
-  "2026-09-23": {
-    title: "COMEDY SLAM",
-    time: "8:00 PM",
-    venue: "OWT, Siolim",
-    url: "https://in.bookmyshow.com/events/comedy-slam-owt-siolim/ET00514508"
-  },
-  
-  "2026-09-27": {
-  title: "THE FRIENDLY NEIGHBORHOOD COMEDY SHOW",
-  time: "8:00 PM",
-  venue: "Nook, Guirim",
-  url: "https://in.bookmyshow.com/events/the-friendly-neighborhood-comedy-show/ET00494049"
-},
-  
-"2026-09-27": {
-    title: "CORPORATE MAJDOOR BY ANMOL GARG",
-    time: "8:00 PM",
-    venue: "Niche Bistro, Goa",
-    url: "https://in.bookmyshow.com/events/corporate-majdoor-by-anmol-garg/ET00427951"
-  },
-  
+  "2026-09-23": [
+    {
+      title: "COMEDY SLAM",
+      time: "8:00 PM",
+      venue: "OWT, Siolim",
+      url: "https://in.bookmyshow.com/events/comedy-slam-owt-siolim/ET00514508"
+    }
+  ],
+
+  "2026-09-27": [
+    {
+      title: "THE FRIENDLY NEIGHBORHOOD COMEDY SHOW",
+      time: "8:00 PM",
+      venue: "Nook, Guirim",
+      url: "https://in.bookmyshow.com/events/the-friendly-neighborhood-comedy-show/ET00494049"
+    },
+    {
+      title: "CORPORATE MAJDOOR BY ANMOL GARG",
+      time: "8:00 PM",
+      venue: "Niche Bistro, Goa",
+      url: "https://in.bookmyshow.com/events/corporate-majdoor-by-anmol-garg/ET00427951"
+    }
+  ]
+
 };
 
 
@@ -1546,13 +1565,19 @@ function isPastEvent(key) {
 
 /* ==========================================
    OPEN EVENT
+
+   Takes both the date key AND the show's index within
+   that date's array, since a date can now hold more than
+   one show.
 ========================================== */
 
-function openEvent(key) {
+function openEvent(key, index) {
 
-  const event = events[key];
+  const dayEvents = events[key];
 
-  if (!event) return;
+  if (!dayEvents || !dayEvents[index]) return;
+
+  const event = dayEvents[index];
 
   modalDate.textContent =
     formatDate(key);
@@ -1767,43 +1792,47 @@ function renderCalendar() {
       );
 
 
-    /* Event — this tile keeps showing in the calendar grid
-       whether the show is upcoming or already happened, exactly
-       as before. Only the "This Month" list below and the
-       ticket button in the popup change once it's past. */
+    /* Events — one tile per show in that date's array. Every
+       show for the day keeps showing in the calendar grid
+       whether it's upcoming or already happened, exactly as
+       before. Only the "This Month" list below and the ticket
+       button in the popup change once a show is past. */
 
     if (events[key]) {
 
-      const event =
-        events[key];
+      events[key].forEach(
+        function(event, index) {
 
-      const eventElement =
-        document.createElement("div");
+          const eventElement =
+            document.createElement("div");
 
-      eventElement.className =
-        "event";
+          eventElement.className =
+            "event";
 
-      eventElement.innerHTML = `
-        <div class="event-title">
-          ${event.title}
-        </div>
+          eventElement.innerHTML = `
+            <div class="event-title">
+              ${event.title}
+            </div>
 
-        <div class="event-time">
-          ${event.time}
-        </div>
-      `;
+            <div class="event-time">
+              ${event.time}
+            </div>
+          `;
 
 
-      eventElement.addEventListener(
-        "click",
-        function() {
-          openEvent(key);
+          eventElement.addEventListener(
+            "click",
+            function() {
+              openEvent(key, index);
+            }
+          );
+
+
+          cell.appendChild(
+            eventElement
+          );
+
         }
-      );
-
-
-      cell.appendChild(
-        eventElement
       );
 
       cell.style.cursor =
@@ -1869,37 +1898,47 @@ function renderCalendar() {
 
 /* ==========================================
    EVENT CARDS
+
+   Flattens every date's array of shows into one list of
+   [key, event] pairs for the month, filters out past shows,
+   sorts by date, then renders a card per show — so two shows
+   on the same date each get their own card.
 ========================================== */
 
 function renderEventList(year, month) {
 
-  const monthEvents =
-    Object.entries(events)
-      .filter(function([key]) {
+  const monthEvents = [];
 
-        const date =
-          new Date(
-            key + "T12:00:00"
-          );
+  Object.entries(events).forEach(
+    function([key, dayEvents]) {
 
-        /* Only upcoming shows appear in the "This Month" grid —
-           once a show's date has passed it drops out of this
-           list automatically, no manual edit needed. */
+      const date =
+        new Date(key + "T12:00:00");
 
-        return (
-          date.getFullYear() === year &&
-          date.getMonth() === month &&
-          !isPastEvent(key)
-        );
+      if (
+        date.getFullYear() !== year ||
+        date.getMonth() !== month ||
+        isPastEvent(key)
+      ) {
+        return;
+      }
 
-      })
-      .sort(function(a, b) {
+      dayEvents.forEach(
+        function(event) {
+          monthEvents.push([key, event]);
+        }
+      );
 
-        return a[0].localeCompare(
-          b[0]
-        );
+    }
+  );
 
-      });
+  monthEvents.sort(function(a, b) {
+
+    return a[0].localeCompare(
+      b[0]
+    );
+
+  });
 
 
   if (
