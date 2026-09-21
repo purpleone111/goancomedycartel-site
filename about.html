@@ -1,4 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Goan Comedy Cartel</title>
+<meta name="description" content="Meet Goan Comedy Cartel, a homegrown comedy collective creating space for stand-up comedy, open mics and local comedians in Goa.">
+<link rel="canonical" href="https://goancomedycartel.com/about.html">
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
+
 html,
 body {
   margin: 0;
@@ -8,9 +18,7 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 .about-section {
   position: relative;
@@ -21,324 +29,144 @@ body {
   overflow: hidden;
 }
 
-/* floating chaos */
+.about-shape { position:absolute; width:38px; height:38px; border:5px solid #000; z-index:1; }
+.shape-pink { background:#ff2f9f; top:8%; right:8%; transform:rotate(17deg); }
+.shape-yellow { background:#ffe600; top:43%; left:3%; transform:rotate(-14deg); }
+.shape-teal { background:#00f5d4; bottom:9%; right:12%; transform:rotate(21deg); }
+.shape-pink-two { background:#ff2f9f; bottom:20%; left:9%; transform:rotate(-8deg); }
 
-.about-shape {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  border: 5px solid #000;
-  z-index: 1;
-}
-
-.shape-pink {
-  background: #ff2f9f;
-  top: 8%;
-  right: 8%;
-  transform: rotate(17deg);
-}
-
-.shape-yellow {
-  background: #ffe600;
-  top: 43%;
-  left: 3%;
-  transform: rotate(-14deg);
-}
-
-.shape-teal {
-  background: #00f5d4;
-  bottom: 9%;
-  right: 12%;
-  transform: rotate(21deg);
-}
-
-.shape-pink-two {
-  background: #ff2f9f;
-  bottom: 20%;
-  left: 9%;
-  transform: rotate(-8deg);
-}
-
-/* main container */
-
-.about-inner {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ABOUT US */
+.about-inner { position:relative; z-index:3; width:100%; max-width:1200px; margin:0 auto; }
 
 .about-heading {
-  margin: 0 0 55px 0;
-
-  font-family: Arial Black, Arial, sans-serif;
-  font-size: clamp(70px, 13vw, 170px);
-  line-height: 0.78;
-  letter-spacing: -8px;
-  text-transform: uppercase;
-
-  color: #ff2f9f;
-
-  /* reduced from 9px to 3px */
-  text-shadow: 3px 3px 0 #00f5d4;
-
-  transform: rotate(-2deg);
+  margin:0 0 55px 0;
+  font-family:Arial Black,Arial,sans-serif;
+  font-size:clamp(70px,13vw,170px);
+  line-height:.78; letter-spacing:-8px; text-transform:uppercase;
+  color:#ff2f9f; text-shadow:3px 3px 0 #00f5d4; transform:rotate(-2deg);
 }
+.about-intro { max-width:900px; margin-left:7%; font-family:Arial,sans-serif; font-size:clamp(21px,2.4vw,32px); line-height:1.25; font-weight:700; }
+.about-intro strong { color:#ffe600; }
 
-.about-intro {
-  max-width: 900px;
-  margin-left: 7%;
+.about-manifesto { margin:70px auto 110px; max-width:1000px; padding:35px 40px; background:#00f5d4; color:#000; border:6px solid #000; transform:rotate(1.5deg); box-shadow:12px 12px 0 #ff2f9f; }
+.about-manifesto p { margin:0; font-family:Arial Black,Arial,sans-serif; font-size:clamp(30px,5vw,65px); line-height:.95; letter-spacing:-3px; text-transform:uppercase; }
 
-  font-family: Arial, sans-serif;
-  font-size: clamp(21px, 2.4vw, 32px);
-  line-height: 1.25;
-  font-weight: 700;
-}
+.who-section { position:relative; display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:center; }
+.who-heading { font-family:Arial Black,Arial,sans-serif; font-size:clamp(55px,8vw,105px); line-height:.8; letter-spacing:-5px; color:#ffe600; text-transform:uppercase; transform:rotate(2deg); }
+.who-heading span { color:#ff2f9f; }
 
-.about-intro strong {
-  color: #ffe600;
-}
+.people { display:flex; gap:25px; }
+.person { flex:1; background:#161616; border:5px solid #fff; padding:30px 25px; position:relative; min-height:190px; }
+.person:nth-child(1) { transform:rotate(-2deg); }
+.person:nth-child(2) { transform:rotate(2deg); }
+.person-name { margin:0; font-family:Arial Black,Arial,sans-serif; font-size:clamp(28px,4vw,48px); line-height:.9; color:#ff2f9f; text-transform:uppercase; }
+.person-role { margin-top:15px; font-family:Arial,sans-serif; font-size:15px; font-weight:900; letter-spacing:1px; color:#00f5d4; text-transform:uppercase; }
+.who-copy { margin-top:35px; font-family:Arial,sans-serif; font-size:20px; line-height:1.35; font-weight:600; color:#fff; }
 
-/* manifesto */
+.about-ending { margin-top:120px; text-align:center; }
+.about-ending .small { margin-bottom:15px; font-family:Arial,sans-serif; font-size:14px; font-weight:900; letter-spacing:4px; color:#00f5d4; }
+.about-ending h2 { margin:0; font-family:Arial Black,Arial,sans-serif; font-size:clamp(48px,8vw,105px); line-height:.85; letter-spacing:-5px; color:#ff2f9f; text-shadow:3px 3px 0 #00f5d4; }
 
-.about-manifesto {
-  margin: 70px auto 110px;
-  max-width: 1000px;
-
-  padding: 35px 40px;
-
-  background: #00f5d4;
-  color: #000;
-
-  border: 6px solid #000;
-
-  transform: rotate(1.5deg);
-
-  box-shadow: 12px 12px 0 #ff2f9f;
-}
-
-.about-manifesto p {
-  margin: 0;
-
-  font-family: Arial Black, Arial, sans-serif;
-  font-size: clamp(30px, 5vw, 65px);
-  line-height: 0.95;
-  letter-spacing: -3px;
-  text-transform: uppercase;
-}
-
-/* WHO ARE WE */
-
-.who-section {
-  position: relative;
-
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 70px;
-
-  align-items: center;
-}
-
-.who-heading {
-  font-family: Arial Black, Arial, sans-serif;
-  font-size: clamp(55px, 8vw, 105px);
-  line-height: 0.8;
-  letter-spacing: -5px;
-
-  color: #ffe600;
-
-  text-transform: uppercase;
-
-  transform: rotate(2deg);
-}
-
-.who-heading span {
-  color: #ff2f9f;
-}
-
-/* people */
-
-.people {
-  display: flex;
-  gap: 25px;
-}
-
-.person {
-  flex: 1;
-
-  background: #161616;
-
-  border: 5px solid #fff;
-
-  padding: 30px 25px;
-
-  position: relative;
-
-  min-height: 190px;
-}
-
-.person:nth-child(1) {
-  transform: rotate(-2deg);
-}
-
-.person:nth-child(2) {
-  transform: rotate(2deg);
-}
-
-.person-name {
-  margin: 0;
-
-  font-family: Arial Black, Arial, sans-serif;
-  font-size: clamp(28px, 4vw, 48px);
-  line-height: 0.9;
-
-  color: #ff2f9f;
-
-  text-transform: uppercase;
-}
-
-.person-role {
-  margin-top: 15px;
-
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 900;
-
-  letter-spacing: 1px;
-
-  color: #00f5d4;
-  text-transform: uppercase;
-}
-
-.who-copy {
-  margin-top: 35px;
-
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  line-height: 1.35;
-  font-weight: 600;
-
-  color: #fff;
-}
-
-/* slogan */
-
-.about-ending {
-  margin-top: 120px;
-
-  text-align: center;
-}
-
-.about-ending .small {
-  margin-bottom: 15px;
-
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 4px;
-
-  color: #00f5d4;
-}
-
-.about-ending h2 {
-  margin: 0;
-
-  font-family: Arial Black, Arial, sans-serif;
-  font-size: clamp(48px, 8vw, 105px);
-  line-height: 0.85;
-  letter-spacing: -5px;
-
-  color: #ff2f9f;
-
-  /* reduced to 3px */
-  text-shadow: 3px 3px 0 #00f5d4;
+@media (max-width:700px) {
+  .about-section { padding:55px 7%; }
+  .about-heading { font-size:75px; letter-spacing:-5px; margin-bottom:45px; }
+  .about-intro { margin-left:0; font-size:21px; }
+  .about-manifesto { margin:55px 5px 80px; padding:25px 22px; }
+  .about-manifesto p { font-size:35px; letter-spacing:-2px; }
+  .who-section { display:block; }
+  .who-heading { font-size:65px; margin-bottom:45px; }
+  .people { flex-direction:column; gap:25px; }
+  .person { min-height:150px; }
+  .who-copy { font-size:18px; }
+  .about-ending { margin-top:85px; }
+  .about-ending h2 { font-size:48px; letter-spacing:-3px; }
+  .about-shape { width:28px; height:28px; border-width:4px; }
 }
 
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .about-section {
-    padding: 55px 7%;
-  }
-
-  .about-heading {
-    font-size: 75px;
-    letter-spacing: -5px;
-    margin-bottom: 45px;
-  }
-
-  .about-intro {
-    margin-left: 0;
-    font-size: 21px;
-  }
-
-  .about-manifesto {
-    margin: 55px 5px 80px;
-    padding: 25px 22px;
-  }
-
-  .about-manifesto p {
-    font-size: 35px;
-    letter-spacing: -2px;
-  }
-
-  .who-section {
-    display: block;
-  }
-
-  .who-heading {
-    font-size: 65px;
-    margin-bottom: 45px;
-  }
-
-  .people {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .person {
-    min-height: 150px;
-  }
-
-  .who-copy {
-    font-size: 18px;
-  }
-
-  .about-ending {
-    margin-top: 85px;
-  }
-
-  .about-ending h2 {
-    font-size: 48px;
-    letter-spacing: -3px;
-  }
-
-  .about-shape {
-    width: 28px;
-    height: 28px;
-    border-width: 4px;
-  }
+/* GCC SITE NAV */
+.site-nav{
+  position:relative; z-index:1000; width:100%; min-height:82px;
+  padding:8px 4%; background:#050505; display:flex; align-items:flex-start;
+  gap:34px; font-family:Arial Black,Impact,Arial,sans-serif;
+  border-bottom:2px solid #00f5d4;
 }
+.site-nav-brand{
+  display:flex; align-items:center; justify-content:center; flex:0 0 112px;
+  height:70px; color:#fff; text-decoration:none; transform:rotate(-2deg);
+  transition:transform .18s ease;
+}
+.site-nav-brand:hover{transform:rotate(1deg) scale(1.06)}
+.site-nav-brand img{width:108px;height:68px;object-fit:contain;display:block}
+.site-nav-brand span{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0
+}
+.site-nav-links{
+  margin-left:auto; padding-top:12px; display:flex; align-items:center;
+  justify-content:flex-end; gap:36px;
+}
+.site-nav-links a{
+  position:relative;display:inline-block;color:#fff;text-decoration:none;
+  font-size:12px;font-weight:900;line-height:1.1;text-transform:uppercase;
+  letter-spacing:.2px;white-space:nowrap;padding:13px 0 11px;
+  transition:color .16s ease,transform .16s ease
+}
+.site-nav-links a::after{
+  content:"";position:absolute;left:0;bottom:4px;width:29px;height:4px;
+  transform:rotate(-2deg);transition:width .18s ease,transform .18s ease
+}
+.site-nav-links a:nth-child(1)::after{background:#ffe600}
+.site-nav-links a:nth-child(2)::after{background:#00f5d4}
+.site-nav-links a:nth-child(3)::after{background:#ff2f9f}
+.site-nav-links a:nth-child(4)::after{background:#c6ff00}
+.site-nav-links a:hover,.site-nav-links a:focus-visible{color:#00f5d4;transform:translateY(-2px)}
+.site-nav-links a:hover::after,.site-nav-links a:focus-visible::after{width:100%;transform:rotate(1deg)}
+.site-nav-links a[aria-current="page"]{color:#00f5d4}
+.site-nav-links a[aria-current="page"]::after{width:100%}
+.site-nav-toggle{
+  display:none;margin-left:auto;width:46px;height:42px;padding:7px 8px;
+  border:2px solid #00f5d4;background:#050505;box-shadow:4px 4px 0 #ff2f9f;
+  color:#fff;cursor:pointer;transform:rotate(-2deg)
+}
+.site-nav-toggle span{display:block;height:3px;margin:5px 0;background:currentColor}
+@media(max-width:1100px){
+  .site-nav{flex-wrap:wrap;padding:7px 5%;align-items:flex-start}
+  .site-nav-toggle{display:block;margin-top:10px}
+  .site-nav-links{display:none;width:100%;margin:0;padding:4px 0 8px;flex-direction:column;align-items:flex-start;gap:3px}
+  .site-nav.site-nav-open .site-nav-links{display:flex}
+  .site-nav-links a{font-size:13px;padding:11px 0;white-space:normal}
+}
+@media(max-width:520px){
+  .site-nav{min-height:72px;padding:6px 4%}
+  .site-nav-brand{flex-basis:92px;height:60px}
+  .site-nav-brand img{width:90px;height:58px}
+}
+
 </style>
-
+</head>
+<body>
+<nav class="site-nav" id="siteNav" aria-label="Main navigation">
+  <a class="site-nav-brand" href="/" aria-label="Goan Comedy Cartel home">
+    <img src="logo.gif" alt="">
+    <span>Goan Comedy Cartel</span>
+  </a>
+  <button class="site-nav-toggle" id="siteNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="site-nav-links" id="siteNavLinks">
+    <a href="/">Live Stand-Up Comedy in Goa</a>
+    <a href="/about.html" aria-current="page">About us</a>
+    <a href="/book-a-comic.html">Book A Comedian In Goa</a>
+    <a href="/live-shows.html">Past &amp; Featured Comedy Shows</a>
+  </div>
+</nav>
 <section class="about-section">
-
   <div class="about-shape shape-pink"></div>
   <div class="about-shape shape-yellow"></div>
   <div class="about-shape shape-teal"></div>
   <div class="about-shape shape-pink-two"></div>
-
   <div class="about-inner">
-
-    <h1 class="about-heading">
-      ABOUT<br>US
-    </h1>
-
+    <h1 class="about-heading">ABOUT<br>US</h1>
     <div class="about-intro">
       <strong>Goan Comedy Cartel</strong> is a homegrown comedy collective creating space for comedy in Goa.
       <br><br>
@@ -350,49 +178,14 @@ body {
       <br><br>
       We're here for the people who make Goa funny, and the people who come out to watch them.
     </div>
-
-    <div class="about-manifesto">
-      <p>
-        Local comedy.<br>
-        Local stages.<br>
-        Local voices.
-      </p>
-    </div>
-
+    <div class="about-manifesto"><p>Local comedy.<br>Local stages.<br>Local voices.</p></div>
     <div class="who-section">
-
-      <div class="who-heading">
-        WHO<br>
-        <span>ARE</span><br>
-        WE?
-      </div>
-
+      <div class="who-heading">WHO<br><span>ARE</span><br>WE?</div>
       <div>
-
         <div class="people">
-
-          <div class="person">
-            <h2 class="person-name">
-              Navin<br>Noronha
-            </h2>
-
-            <div class="person-role">
-              Co-founder · Comedian
-            </div>
-          </div>
-
-          <div class="person">
-            <h2 class="person-name">
-              Abhi<br>Tundel
-            </h2>
-
-            <div class="person-role">
-              Co-founder · Film Director
-            </div>
-          </div>
-
+          <div class="person"><h2 class="person-name">Navin<br>Noronha</h2><div class="person-role">Co-founder · Comedian</div></div>
+          <div class="person"><h2 class="person-name">Abhi<br>Tundel</h2><div class="person-role">Co-founder · Film Director</div></div>
         </div>
-
         <div class="who-copy">
           We're comedians, collaborators and the two people behind Goan Comedy Cartel.
           <br><br>
@@ -402,24 +195,25 @@ body {
           <br><br>
           We're just getting started.
         </div>
-
       </div>
-
     </div>
-
     <div class="about-ending">
-
-      <div class="small">
-        GOAN COMEDY CARTEL
-      </div>
-
-      <h2>
-        COMEDY IN GOA,<br>
-        FOR GOA.
-      </h2>
-
+      <div class="small">GOAN COMEDY CARTEL</div>
+      <h2>COMEDY IN GOA,<br>FOR GOA.</h2>
     </div>
-
   </div>
-
 </section>
+<script>
+(function(){
+  var nav=document.getElementById("siteNav");
+  var toggle=document.getElementById("siteNavToggle");
+  if(!nav||!toggle)return;
+  toggle.addEventListener("click",function(){
+    var open=nav.classList.toggle("site-nav-open");
+    toggle.setAttribute("aria-expanded",open?"true":"false");
+    toggle.setAttribute("aria-label",open?"Close navigation":"Open navigation");
+  });
+})();
+</script>
+</body>
+</html>
