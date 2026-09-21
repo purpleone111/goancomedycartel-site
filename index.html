@@ -4,20 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Goan Comedy Cartel</title>
-<meta name="description" content="Comedy happening in Goa — see who's performing this month, grab tickets, and book us for your next office party, reunion, or celebration.">
+<title>Goan Comedy Cartel | Goa Comedy Shows, Stand-Up & Open Mics</title>
+<meta name="description" content="Your guide to Goa comedy — every stand-up show, comedy night, and open mic happening across Goa in one place. See who's performing, grab tickets, or book Goan Comedy Cartel for your next event.">
+<link rel="canonical" href="https://goancomedycartel.com">
 
 <!-- Social share preview (WhatsApp, Instagram, iMessage, etc.) -->
-<meta property="og:title" content="Goan Comedy Cartel">
-<meta property="og:description" content="Comedy happening in Goa — see who's performing this month, grab tickets, and book us for your next office party, reunion, or celebration.">
+<meta property="og:title" content="Goan Comedy Cartel | Goa Comedy Shows, Stand-Up & Open Mics">
+<meta property="og:description" content="Your guide to Goa comedy — every stand-up show, comedy night, and open mic happening across Goa in one place. See who's performing, grab tickets, or book Goan Comedy Cartel for your next event.">
 <meta property="og:image" content="https://purpleone111.github.io/goancomedycartel-site/social-preview.jpg">
 <meta property="og:url" content="https://goancomedycartel.com">
 <meta property="og:type" content="website">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Goan Comedy Cartel">
-<meta name="twitter:description" content="Comedy happening in Goa — see who's performing this month, grab tickets, and book us for your next office party, reunion, or celebration.">
+<meta name="twitter:title" content="Goan Comedy Cartel | Goa Comedy Shows, Stand-Up & Open Mics">
+<meta name="twitter:description" content="Your guide to Goa comedy — every stand-up show, comedy night, and open mic happening across Goa in one place. See who's performing, grab tickets, or book Goan Comedy Cartel for your next event.">
 <meta name="twitter:image" content="https://purpleone111.github.io/goancomedycartel-site/social-preview.jpg">
+
+<!-- Organization + WebSite structured data — reinforces to Google that
+     this site IS the Goa comedy entity, separate from the per-show
+     Event schema generated in the script below. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Goan Comedy Cartel",
+  "alternateName": "Goa Comedy Cartel",
+  "url": "https://goancomedycartel.com",
+  "description": "Goan Comedy Cartel is Goa's comedy collective and events guide — listing stand-up comedy shows, open mics, and comedy nights happening across Goa.",
+  "areaServed": {
+    "@type": "State",
+    "name": "Goa"
+  },
+  "sameAs": [
+    "https://www.instagram.com/goancomedycartel/"
+  ]
+}
+</script>
 
 <style>
 :root {
@@ -47,6 +69,23 @@ body {
 
 body {
   overflow-x: hidden;
+}
+
+/* Visually hidden but still readable by screen readers and
+   search engines — used for the accessible intro paragraph
+   near the top of the page, not for hiding anything from
+   sighted visitors that they wouldn't otherwise see. */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* =========================
@@ -1180,6 +1219,12 @@ h1 {
       COMEDY HAPPENING IN GOA ↓
     </div>
 
+    <p class="sr-only">
+      Goan Comedy Cartel is your guide to Goa comedy — stand-up
+      comedy shows, comedy nights, and open mics happening
+      across Goa, updated as new shows are announced.
+    </p>
+
   </header>
 
 
@@ -1990,6 +2035,118 @@ function renderCalendar() {
 
 
 /* ==========================================
+   EVENT STRUCTURED DATA (JSON-LD)
+
+   Generates one schema.org Event block per upcoming show,
+   straight from the same `events` object the calendar and
+   list already use — so it can never drift out of sync as
+   shows are added, edited, or expire. This is what lets
+   Google show individual shows as rich results (date, venue,
+   ticket link) directly in search, instead of just a plain
+   blue link to the homepage.
+
+   Runs once on load, after `events` and isPastEvent() exist.
+========================================== */
+
+/* Converts "7:30 PM" -> "19:30:00" (24-hour, seconds included)
+   so it can be combined with the date key into a valid
+   ISO 8601 datetime for the "startDate" field below. */
+
+function to24HourTime(timeString) {
+
+  const [time, meridiem] =
+    timeString.split(" ");
+
+  let [hours, minutes] =
+    time.split(":").map(Number);
+
+  if (meridiem === "PM" && hours !== 12) {
+    hours += 12;
+  }
+
+  if (meridiem === "AM" && hours === 12) {
+    hours = 0;
+  }
+
+  return (
+    pad(hours) + ":" + pad(minutes) + ":00"
+  );
+
+}
+
+
+function renderEventSchema() {
+
+  /* Remove any schema blocks from a previous call, in case
+     this ever gets re-run (e.g. during local testing). */
+
+  document
+    .querySelectorAll('script[data-event-schema]')
+    .forEach(function(node) {
+      node.remove();
+    });
+
+
+  Object.entries(events).forEach(
+    function([key, dayEvents]) {
+
+      if (isPastEvent(key)) return;
+
+      dayEvents.forEach(
+        function(event) {
+
+          const schema = {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": event.title,
+            "startDate":
+              key + "T" + to24HourTime(event.time) + "+05:30",
+            "eventStatus":
+              "https://schema.org/EventScheduled",
+            "eventAttendanceMode":
+              "https://schema.org/OfflineEventAttendanceMode",
+            "location": {
+              "@type": "Place",
+              "name": event.venue,
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Goa",
+                "addressCountry": "IN"
+              }
+            },
+            "organizer": {
+              "@type": "Organization",
+              "name": "Goan Comedy Cartel",
+              "url": "https://goancomedycartel.com"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": event.url,
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "INR"
+            },
+            "url": event.url
+          };
+
+          const script =
+            document.createElement("script");
+
+          script.type = "application/ld+json";
+          script.setAttribute("data-event-schema", "true");
+          script.textContent = JSON.stringify(schema);
+
+          document.head.appendChild(script);
+
+        }
+      );
+
+    }
+  );
+
+}
+
+
+/* ==========================================
    EVENT CARDS
 
    Flattens every date's array of shows into one list of
@@ -2149,6 +2306,7 @@ document
 
 renderCalendar();
 renderEventList();
+renderEventSchema();
 
 </script>
 
