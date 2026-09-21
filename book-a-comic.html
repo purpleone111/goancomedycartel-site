@@ -19,217 +19,172 @@
   --grey: #161616;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--black);
-  color: var(--white);
+html, body {
+  margin: 0; padding: 0; background: var(--black); color: var(--white);
   font-family: Arial Black, Impact, Arial, sans-serif;
 }
+body { overflow-x: hidden; }
 
-body {
-  overflow-x: hidden;
-}
-
-.shape {
-  position: fixed;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.square-1 {
-  width: 55px;
-  height: 55px;
-  background: var(--teal);
-  top: 8%;
-  left: 63%;
-  transform: rotate(14deg);
-}
-
-.square-2 {
-  width: 32px;
-  height: 32px;
-  background: var(--yellow);
-  top: 20%;
-  right: 5%;
-  transform: rotate(-18deg);
-}
-
-.square-3 {
-  width: 70px;
-  height: 70px;
-  background: var(--pink);
-  bottom: 10%;
-  left: 5%;
-  transform: rotate(-12deg);
-}
-
-.square-4 {
-  width: 25px;
-  height: 25px;
-  background: var(--teal);
-  bottom: 25%;
-  right: 3%;
-  transform: rotate(25deg);
-}
-
-.square-5 {
-  width: 42px;
-  height: 42px;
-  background: var(--yellow);
-  top: 48%;
-  left: 1%;
-  transform: rotate(8deg);
-}
-
-.square-6 {
-  width: 28px;
-  height: 28px;
-  background: var(--pink);
-  top: 65%;
-  right: 6%;
-  transform: rotate(-25deg);
-}
-
-.contact-wrap {
+/* GCC SITE NAV */
+.site-nav {
   position: relative;
-  z-index: 2;
-  width: min(900px, 92%);
-  margin: 0 auto;
-  min-height: 100vh;
+  z-index: 1000;
+  width: 100%;
+  min-height: 82px;
+  padding: 8px 4%;
+  background: #050505;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 34px;
+  border-bottom: 2px solid #00f5d4;
+}
+.site-nav-brand {
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 60px 0;
+  flex: 0 0 112px;
+  height: 70px;
+  color: #fff;
+  text-decoration: none;
+  transform: rotate(-2deg);
+  transition: transform .18s ease;
 }
-
-.kicker {
-  color: var(--teal);
-  font-size: 14px;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
+.site-nav-brand:hover { transform: rotate(1deg) scale(1.06); }
+.site-nav-brand img {
+  width: 108px;
+  height: 68px;
+  object-fit: contain;
+  display: block;
 }
-
-h1 {
-  margin: 0;
-  color: var(--pink);
-  font-size: clamp(45px, 9vw, 100px);
-  line-height: 0.9;
-  letter-spacing: -4px;
-  text-transform: uppercase;
-  text-shadow: 3px 3px 0 var(--teal);
+.site-nav-brand span {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
-
-.contact-copy {
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  font-size: clamp(15px, 2.2vw, 19px);
-  line-height: 1.6;
-  color: var(--white);
-  max-width: 550px;
-  margin: 28px 0 40px;
+.site-nav-links {
+  margin-left: auto;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 36px;
 }
-
-.contact-btn {
+.site-nav-links a {
+  position: relative;
   display: inline-block;
-  background: var(--yellow);
-  color: var(--black);
+  color: #fff;
   text-decoration: none;
-  padding: 20px 40px;
-  border: 5px solid var(--black);
-  box-shadow: 9px 9px 0 var(--pink);
-  font-size: clamp(16px, 2.5vw, 20px);
-  font-weight: 900;
-  letter-spacing: 1px;
-  transition: 0.15s;
-}
-
-.contact-btn:hover {
-  transform: translate(4px, 4px);
-  box-shadow: 5px 5px 0 var(--pink);
-}
-
-.email-fallback {
-  margin-top: 22px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: var(--white);
-}
-
-.email-fallback span {
-  color: var(--teal);
-  font-weight: 700;
-}
-
-#copyBtn {
-  margin-left: 8px;
-  background: transparent;
-  border: 2px solid var(--teal);
-  color: var(--teal);
-  font-family: Arial, sans-serif;
   font-size: 12px;
-  font-weight: 700;
-  padding: 4px 10px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  padding: 13px 0 11px;
+  transition: color .16s ease, transform .16s ease;
+}
+.site-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 29px;
+  height: 4px;
+  transform: rotate(-2deg);
+  transition: width .18s ease, transform .18s ease;
+}
+.site-nav-links a:nth-child(1)::after { background: #ffe600; }
+.site-nav-links a:nth-child(2)::after { background: #00f5d4; }
+.site-nav-links a:nth-child(3)::after { background: #ff2f9f; }
+.site-nav-links a:nth-child(4)::after { background: #c6ff00; }
+.site-nav-links a:hover, .site-nav-links a:focus-visible {
+  color: #00f5d4;
+  transform: translateY(-2px);
+}
+.site-nav-links a:hover::after, .site-nav-links a:focus-visible::after { width: 100%; transform: rotate(1deg); }
+.site-nav-links a[aria-current="page"] { color: #ff2f9f; }
+.site-nav-links a[aria-current="page"]::after { width: 100%; }
+.site-nav-toggle {
+  display: none;
+  margin-left: auto;
+  width: 46px;
+  height: 42px;
+  padding: 7px 8px;
+  border: 2px solid #00f5d4;
+  background: #050505;
+  box-shadow: 4px 4px 0 #ff2f9f;
+  color: #fff;
   cursor: pointer;
+  transform: rotate(-2deg);
 }
+.site-nav-toggle span { display: block; height: 3px; margin: 5px 0; background: currentColor; }
 
-#copyBtn:hover {
-  background: var(--teal);
-  color: var(--black);
+.shape { position: fixed; z-index: 0; pointer-events: none; }
+.square-1 { width:55px;height:55px;background:var(--teal);top:8%;left:63%;transform:rotate(14deg); }
+.square-2 { width:32px;height:32px;background:var(--yellow);top:20%;right:5%;transform:rotate(-18deg); }
+.square-3 { width:70px;height:70px;background:var(--pink);bottom:10%;left:5%;transform:rotate(-12deg); }
+.square-4 { width:25px;height:25px;background:var(--teal);bottom:25%;right:3%;transform:rotate(25deg); }
+.square-5 { width:42px;height:42px;background:var(--yellow);top:48%;left:1%;transform:rotate(8deg); }
+.square-6 { width:28px;height:28px;background:var(--pink);top:65%;right:6%;transform:rotate(-25deg); }
+
+.contact-wrap {
+  position: relative; z-index:2; width:min(900px,92%); margin:0 auto;
+  min-height: calc(100vh - 84px);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:60px 0;
 }
+.kicker { color:var(--teal);font-size:14px;letter-spacing:3px;margin-bottom:10px; }
+h1 { margin:0;color:var(--pink);font-size:clamp(45px,9vw,100px);line-height:.9;letter-spacing:-4px;text-transform:uppercase;text-shadow:3px 3px 0 var(--teal); }
+.contact-copy { font-family:Arial,sans-serif;font-weight:700;font-size:clamp(15px,2.2vw,19px);line-height:1.6;color:var(--white);max-width:550px;margin:28px 0 40px; }
+.contact-btn { display:inline-block;background:var(--yellow);color:var(--black);text-decoration:none;padding:20px 40px;border:5px solid var(--black);box-shadow:9px 9px 0 var(--pink);font-size:clamp(16px,2.5vw,20px);font-weight:900;letter-spacing:1px;transition:.15s; }
+.contact-btn:hover { transform:translate(4px,4px);box-shadow:5px 5px 0 var(--pink); }
+.email-fallback { margin-top:22px;font-family:Arial,sans-serif;font-size:14px;color:var(--white); }
+.email-fallback span { color:var(--teal);font-weight:700; }
+#copyBtn { margin-left:8px;background:transparent;border:2px solid var(--teal);color:var(--teal);font-family:Arial,sans-serif;font-size:12px;font-weight:700;padding:4px 10px;cursor:pointer; }
+#copyBtn:hover { background:var(--teal);color:var(--black); }
+.back-link { margin-top:45px;font-family:Arial,sans-serif;font-weight:700;font-size:14px;color:var(--teal);text-decoration:none;letter-spacing:1px; }
+.back-link:hover { color:var(--white); }
 
-.back-link {
-  margin-top: 45px;
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--teal);
-  text-decoration: none;
-  letter-spacing: 1px;
+@media (max-width:1100px) {
+  .site-nav { flex-wrap:wrap; padding:7px 5%; align-items:flex-start; }
+  .site-nav-toggle { display:block; margin-top:10px; }
+  .site-nav-links { display:none; width:100%; margin:0; padding:4px 0 8px; flex-direction:column; align-items:flex-start; gap:3px; }
+  .site-nav.site-nav-open .site-nav-links { display:flex; }
+  .site-nav-links a { font-size:13px; padding:11px 0; white-space:normal; }
 }
-
-.back-link:hover {
-  color: var(--white);
-}
-
-@media (max-width: 520px) {
-
-  h1 {
-    font-size: 52px;
-    letter-spacing: -2px;
-  }
-
-  .contact-copy {
-    font-size: 15px;
-  }
-
-  .contact-btn {
-    padding: 16px 28px;
-    border-width: 4px;
-    box-shadow: 6px 6px 0 var(--pink);
-  }
-
-  .square-1 {
-    width: 30px;
-    height: 30px;
-  }
-
-  .square-3 {
-    width: 40px;
-    height: 40px;
-  }
+@media (max-width:520px) {
+  .site-nav { min-height:72px; padding:6px 4%; }
+  .site-nav-brand { flex-basis:92px; height:60px; }
+  .site-nav-brand img { width:90px; height:58px; }
+  h1 { font-size:52px;letter-spacing:-2px; }
+  .contact-copy { font-size:15px; }
+  .contact-btn { padding:16px 28px;border-width:4px;box-shadow:6px 6px 0 var(--pink); }
+  .square-1 { width:30px;height:30px; }
+  .square-3 { width:40px;height:40px; }
 }
 </style>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://goancomedycartel.com/book-a-comic.html">
 </head>
 
 <body>
+
+<nav class="site-nav" id="siteNav" aria-label="Main navigation">
+  <a class="site-nav-brand" href="/" aria-label="Goan Comedy Cartel home">
+    <img src="logo.gif" alt="">
+    <span>Goan Comedy Cartel</span>
+  </a>
+  <button class="site-nav-toggle" id="siteNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="site-nav-links" id="siteNavLinks">
+    <a href="/">Live Stand-Up Comedy in Goa</a>
+    <a href="/about.html">About us</a>
+    <a href="/book-a-comic.html" aria-current="page">Book A Comedian In Goa</a>
+    <a href="/live-shows.html">Past &amp; Featured Comedy Shows</a>
+  </div>
+</nav>
 
 <div class="shape square-1"></div>
 <div class="shape square-2"></div>
@@ -238,80 +193,54 @@ h1 {
 <div class="shape square-5"></div>
 <div class="shape square-6"></div>
 
-
 <main class="contact-wrap">
-
-  <div class="kicker">
-    CORPORATE &amp; PRIVATE SHOWS
-  </div>
-
-  <h1>
-    BOOK US<br>
-    FOR YOUR EVENT
-  </h1>
-
+  <div class="kicker">CORPORATE &amp; PRIVATE SHOWS</div>
+  <h1>BOOK US<br>FOR YOUR EVENT</h1>
   <p class="contact-copy">
     Planning an upcoming office party, reunion, or celebration?
     We've got you covered. Drop us an email, and we promise to
     bring the fun.
   </p>
-
-  <a
-    class="contact-btn"
-    id="emailBtn"
-    href="#"
-  >
-    GET IN TOUCH →
-  </a>
-
+  <a class="contact-btn" id="emailBtn" href="#">GET IN TOUCH →</a>
   <p class="email-fallback" id="emailFallback">
     or email us directly at
     <span id="emailText">···</span>
     <button id="copyBtn" type="button">Copy</button>
   </p>
-
-  <a class="back-link" href="https://goancomedycartel.com">
-    ← BACK TO HOME
-  </a>
-
+  <a class="back-link" href="/">← BACK TO HOME</a>
 </main>
 
-
 <script>
+var user = "contact";
+var domain = "goancomedycartel.com";
+var fullEmail = user + "@" + domain;
 
-  var user = "contact";
-  var domain = "goancomedycartel.com";
-  var fullEmail = user + "@" + domain;
+document.getElementById("emailText").textContent = fullEmail;
 
-  document.getElementById("emailText").textContent = fullEmail;
+document.getElementById("emailBtn").addEventListener("click", function(event) {
+  event.preventDefault();
+  window.location.href = "mailto:" + fullEmail + "?subject=Show%20Inquiry";
+});
 
-  document
-    .getElementById("emailBtn")
-    .addEventListener("click", function (event) {
+document.getElementById("copyBtn").addEventListener("click", function() {
+  navigator.clipboard.writeText(fullEmail).then(function() {
+    var btn = document.getElementById("copyBtn");
+    var original = btn.textContent;
+    btn.textContent = "Copied!";
+    setTimeout(function() { btn.textContent = original; }, 1500);
+  });
+});
 
-      event.preventDefault();
-
-      window.location.href =
-        "mailto:" + fullEmail +
-        "?subject=Show%20Inquiry";
-
-    });
-
-  document
-    .getElementById("copyBtn")
-    .addEventListener("click", function () {
-
-      navigator.clipboard.writeText(fullEmail).then(function () {
-        var btn = document.getElementById("copyBtn");
-        var original = btn.textContent;
-        btn.textContent = "Copied!";
-        setTimeout(function () {
-          btn.textContent = original;
-        }, 1500);
-      });
-
-    });
-
+(function(){
+  var nav=document.getElementById("siteNav");
+  var toggle=document.getElementById("siteNavToggle");
+  if(!nav||!toggle)return;
+  toggle.addEventListener("click",function(){
+    var open=nav.classList.toggle("site-nav-open");
+    toggle.setAttribute("aria-expanded",open?"true":"false");
+    toggle.setAttribute("aria-label",open?"Close navigation":"Open navigation");
+  });
+})();
 </script>
 
 </body>
