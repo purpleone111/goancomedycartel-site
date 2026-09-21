@@ -1182,12 +1182,13 @@ h1 {
 }
 
 
-/* SITE NAVIGATION — quiet GCC treatment */
+/* SITE NAVIGATION — dynamic GCC treatment
+   Page content/functionality below this header is unchanged. */
 .site-nav{
   position:relative;
   z-index:1000;
   width:100%;
-  min-height:74px;
+  min-height:78px;
   padding:10px 4%;
   background:#050505;
   display:flex;
@@ -1197,22 +1198,32 @@ h1 {
   border-bottom:2px solid #00f5d4;
 }
 
-/* Logo is the brand — no competing GOAN COMEDY CARTEL wordmark */
+/* The logo itself is the brand. */
 .site-nav-brand{
+  position:relative;
   display:flex;
   align-items:center;
-  flex:0 0 auto;
+  justify-content:center;
+  flex:0 0 88px;
+  height:58px;
   color:#fff;
   text-decoration:none;
+  transform:rotate(-2deg);
+  transition:transform .18s ease;
+}
+
+.site-nav-brand:hover{
+  transform:rotate(1deg) scale(1.07);
 }
 
 .site-nav-brand img{
-  width:74px;
-  height:52px;
+  width:84px;
+  height:56px;
   object-fit:contain;
   display:block;
 }
 
+/* Keep the site name semantically present without duplicating it visually. */
 .site-nav-brand span{
   position:absolute;
   width:1px;
@@ -1230,7 +1241,7 @@ h1 {
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  gap:34px;
+  gap:36px;
 }
 
 .site-nav-links a{
@@ -1242,22 +1253,23 @@ h1 {
   font-weight:900;
   line-height:1.1;
   text-transform:uppercase;
-  letter-spacing:.15px;
+  letter-spacing:.2px;
   white-space:nowrap;
-  padding:11px 0 10px;
-  transition:transform .15s ease,color .15s ease;
+  padding:13px 0 11px;
+  transition:color .16s ease, transform .16s ease;
 }
 
-/* Small GCC-color marker instead of boxes/stripes */
+/* One small colour gesture per link — no boxes, no extra header stripes. */
 .site-nav-links a::after{
   content:"";
   position:absolute;
   left:0;
   bottom:4px;
-  width:30px;
-  height:3px;
+  width:29px;
+  height:4px;
   transform:rotate(-2deg);
-  transition:width .15s ease;
+  transform-origin:left center;
+  transition:width .18s ease, transform .18s ease;
 }
 .site-nav-links a:nth-child(1)::after{background:#ffe600}
 .site-nav-links a:nth-child(2)::after{background:#00f5d4}
@@ -1267,23 +1279,28 @@ h1 {
 .site-nav-links a:hover,
 .site-nav-links a:focus-visible{
   color:#00f5d4;
-  transform:translateY(-1px);
+  transform:translateY(-2px);
 }
+
 .site-nav-links a:hover::after,
 .site-nav-links a:focus-visible::after{
   width:100%;
+  transform:rotate(1deg);
 }
 
+/* Small menu button on narrow screens, using the same site language. */
 .site-nav-toggle{
   display:none;
   margin-left:auto;
-  width:44px;
-  height:40px;
+  width:46px;
+  height:42px;
   padding:7px 8px;
   border:2px solid #00f5d4;
   background:#050505;
+  box-shadow:4px 4px 0 #ff2f9f;
   color:#fff;
   cursor:pointer;
+  transform:rotate(-2deg);
 }
 
 .site-nav-toggle span{
@@ -1294,28 +1311,32 @@ h1 {
 }
 
 @media(max-width:1100px){
-  .site-nav{flex-wrap:wrap;padding:10px 5%}
+  .site-nav{
+    flex-wrap:wrap;
+    padding:9px 5%;
+  }
   .site-nav-toggle{display:block}
   .site-nav-links{
     display:none;
     width:100%;
-    margin:4px 0 6px;
-    padding:4px 0;
+    margin:5px 0 7px;
+    padding:5px 0;
     flex-direction:column;
     align-items:flex-start;
-    gap:4px;
+    gap:3px;
   }
   .site-nav.site-nav-open .site-nav-links{display:flex}
   .site-nav-links a{
     font-size:13px;
-    padding:10px 0;
+    padding:11px 0;
     white-space:normal;
   }
 }
 
 @media(max-width:520px){
-  .site-nav{min-height:64px;padding:8px 4%}
-  .site-nav-brand img{width:62px;height:44px}
+  .site-nav{min-height:66px;padding:8px 4%}
+  .site-nav-brand{flex-basis:72px;height:48px}
+  .site-nav-brand img{width:70px;height:46px}
 }
 </style>
 </head>
@@ -1326,7 +1347,7 @@ h1 {
 <!-- SITE NAVIGATION — replaces the Google Sites navigation wrapper -->
 <nav class="site-nav" id="siteNav" aria-label="Main navigation">
   <a class="site-nav-brand" href="/">
-    <img src="header-logo-static.png" alt="">
+    <img src="header-logo.gif" alt="">
     <span>Goan Comedy Cartel</span>
   </a>
   <button class="site-nav-toggle" id="siteNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks">
