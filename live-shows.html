@@ -18,8 +18,10 @@
     font-family: Arial, Helvetica, sans-serif;
     background: var(--black);
     color: var(--white);
-    padding: 55px 30px 80px;
+    padding: 55px clamp(24px, 5vw, 70px) 80px;
     overflow: hidden;
+    max-width: 1320px;
+    margin: 0 auto;
   }
 
   .live-shows * {
@@ -74,8 +76,8 @@
 
   .poster-wall {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 55px 35px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 55px 30px;
     align-items: start;
   }
 
