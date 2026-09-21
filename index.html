@@ -1224,7 +1224,7 @@ h1 {
   <div class="section-heading">
 
     <h2>
-      This Month
+      Upcoming Shows
     </h2>
 
     <span></span>
@@ -1762,7 +1762,6 @@ document.addEventListener(
 function renderCalendar() {
 
   calendarDays.innerHTML = "";
-  eventList.innerHTML = "";
 
   const year =
     currentDate.getFullYear();
@@ -1891,8 +1890,8 @@ function renderCalendar() {
     /* Events — one tile per show in that date's array. Every
        show for the day keeps showing in the calendar grid
        whether it's upcoming or already happened, exactly as
-       before. Only the "This Month" list below and the ticket
-       button in the popup change once a show is past. */
+       before. Only the "Upcoming Shows" list below and the
+       ticket button in the popup change once a show is past. */
 
     if (events[key]) {
 
@@ -1983,11 +1982,9 @@ function renderCalendar() {
 
   }
 
-
-  renderEventList(
-    year,
-    month
-  );
+  /* The "Upcoming Shows" list below the calendar is
+     independent of whichever month the grid above is
+     currently showing — see renderEventList(). */
 
 }
 
@@ -1996,39 +1993,36 @@ function renderCalendar() {
    EVENT CARDS
 
    Flattens every date's array of shows into one list of
-   [key, event] pairs for the month, filters out past shows,
-   sorts by date, then renders a card per show — so two shows
-   on the same date each get their own card.
+   [key, event] pairs across ALL months (not just the one
+   currently shown in the calendar grid above), filters out
+   past shows, sorts by date, then renders a card per show —
+   so two shows on the same date each get their own card.
+   This runs once on load and doesn't change when the visitor
+   clicks the month arrows, so upcoming shows are always
+   visible without having to navigate the calendar.
 ========================================== */
 
-function renderEventList(year, month) {
+function renderEventList() {
 
-  const monthEvents = [];
+  const upcomingEvents = [];
 
   Object.entries(events).forEach(
     function([key, dayEvents]) {
 
-      const date =
-        new Date(key + "T12:00:00");
-
-      if (
-        date.getFullYear() !== year ||
-        date.getMonth() !== month ||
-        isPastEvent(key)
-      ) {
+      if (isPastEvent(key)) {
         return;
       }
 
       dayEvents.forEach(
         function(event) {
-          monthEvents.push([key, event]);
+          upcomingEvents.push([key, event]);
         }
       );
 
     }
   );
 
-  monthEvents.sort(function(a, b) {
+  upcomingEvents.sort(function(a, b) {
 
     return a[0].localeCompare(
       b[0]
@@ -2038,7 +2032,7 @@ function renderEventList(year, month) {
 
 
   if (
-    monthEvents.length === 0
+    upcomingEvents.length === 0
   ) {
 
     eventList.innerHTML = `
@@ -2061,7 +2055,9 @@ function renderEventList(year, month) {
   }
 
 
-  monthEvents.forEach(
+  eventList.innerHTML = "";
+
+  upcomingEvents.forEach(
     function([key, event]) {
 
       const card =
@@ -2108,6 +2104,10 @@ function renderEventList(year, month) {
 
 /* ==========================================
    MONTH NAVIGATION
+
+   Only re-renders the calendar grid — the "Upcoming Shows"
+   list below is intentionally independent of the month
+   being viewed, so it doesn't need to re-render here.
 ========================================== */
 
 document
@@ -2148,6 +2148,7 @@ document
 ========================================== */
 
 renderCalendar();
+renderEventList();
 
 </script>
 
