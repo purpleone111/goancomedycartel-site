@@ -101,13 +101,38 @@ body {
   align-items: center;
   justify-content: center;
   background: var(--black);
-  padding: 25px 5%;
+  padding: 12px 5% 8px;
 }
 
 .logo-wrap img {
+  width: min(420px, 62vw);
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+@media (max-width: 800px) {
+  .logo-wrap {
+    padding: 10px 5% 5px;
+  }
+
+  .logo-wrap img {
+    width: min(300px, 68vw);
+  }
+
+  .calendar-wrap {
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo-wrap img {
+    width: min(230px, 64vw);
+  }
+
+  .calendar-wrap {
+    padding-top: 16px;
+  }
 }
 
 /* =========================
