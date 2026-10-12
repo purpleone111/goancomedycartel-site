@@ -45,51 +45,23 @@ h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;let
 .hero-actions .btn.alt{background:var(--yellow);box-shadow:6px 6px 0 var(--pink)}
 .hero-actions .btn:hover{background:var(--white);transform:translate(2px,2px);box-shadow:4px 4px 0 var(--teal)}
 
-/* TIER SECTIONS */
-.tier{margin-bottom:80px}
-.tier[hidden]{display:none}
-.tier-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 30px;padding-bottom:12px;border-bottom:4px solid var(--rule)}
-.tier-head h2{margin:0;color:var(--rule);font-size:var(--hsize);line-height:1;letter-spacing:-2px;text-transform:uppercase}
-.tier-head p{margin:0;font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#bdbdbd}
-#sec1{--rule:var(--pink);--hsize:clamp(32px,5.5vw,56px)}
-#sec2{--rule:var(--teal);--hsize:clamp(24px,4vw,38px)}
-#sec3{--rule:#8a8a8a;--hsize:clamp(18px,3vw,26px)}
-
-.grid{list-style:none;margin:0;padding:0;display:grid}
+/* THE BEST: one section, one grid */
+.best{margin-bottom:70px}
+.best-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 34px;padding-bottom:12px;border-bottom:4px solid var(--pink)}
+.best-head h2{margin:0;color:var(--pink);font-size:clamp(28px,5vw,46px);line-height:1;letter-spacing:-2px;text-transform:uppercase}
+.best-head p{margin:0;font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#bdbdbd}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px}
 .grid li{display:flex}
-.g1{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 40px}
-.g2{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 26px}
-.g3{grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 14px}
 
 /* CARDS */
-.card{display:flex;flex-direction:column;width:100%;padding:0;margin:0;background:var(--black);color:var(--white);border:4px solid var(--black);font-family:inherit;text-align:left;cursor:pointer;transition:transform .15s,box-shadow .15s}
-.card:hover,.card:focus-visible{transform:translate(-3px,-4px);outline:none}
+.card{--sh:var(--pink);display:flex;flex-direction:column;width:100%;padding:0;margin:0;background:var(--black);color:var(--white);border:4px solid var(--black);box-shadow:8px 8px 0 var(--sh);font-family:inherit;text-align:left;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.card:hover,.card:focus-visible{transform:translate(-3px,-4px);box-shadow:12px 12px 0 var(--sh);outline:none}
 .card:focus-visible{outline:3px solid var(--white);outline-offset:4px}
 .photo{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--grey)}
-.body{display:flex;flex-direction:column;gap:12px;padding:16px;border-top:4px solid var(--sh)}
-.name{color:var(--sh);line-height:1;text-transform:uppercase;letter-spacing:-.5px}
-.quote{display:block;font-family:Arial,sans-serif;font-weight:700;line-height:1.4}
+.body{display:flex;flex-direction:column;gap:10px;padding:14px;border-top:4px solid var(--sh)}
+.name{color:var(--sh);font-size:clamp(16px,2vw,21px);line-height:1;text-transform:uppercase;letter-spacing:-.5px}
+.quote{display:block;font-family:Arial,sans-serif;font-size:14px;font-weight:700;line-height:1.4}
 .quote small{display:block;margin-top:6px;font-size:12px;font-style:italic;font-weight:700;color:#b8b8b8}
-.more{margin-top:auto;font-family:Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:1px;color:var(--sh)}
-
-/* Tier 1: headliners, biggest, one pink shadow */
-.t1{--sh:var(--pink);box-shadow:12px 12px 0 var(--sh)}
-.t1:hover,.t1:focus-visible{box-shadow:17px 17px 0 var(--sh)}
-.t1 .body{padding:22px;gap:14px}
-.t1 .name{font-size:clamp(26px,3.6vw,40px)}
-.t1 .quote{font-size:clamp(17px,2vw,21px)}
-
-/* Tier 2: regulars, medium, teal shadow */
-.t2{--sh:var(--teal);box-shadow:8px 8px 0 var(--sh)}
-.t2:hover,.t2:focus-visible{box-shadow:12px 12px 0 var(--sh)}
-.t2 .name{font-size:clamp(17px,2.2vw,22px)}
-.t2 .quote{font-size:14px}
-
-/* Tier 3: the rest, small and flat, no shadow, no joke */
-.t3{--sh:var(--white);border:3px solid #2a2a2a}
-.t3:hover,.t3:focus-visible{border-color:var(--teal)}
-.t3 .body{padding:9px 10px 11px;border-top:3px solid #2a2a2a}
-.t3 .name{font-size:12px;letter-spacing:0}
 
 .more-note{margin:0;padding:26px 28px;border:4px dashed var(--teal);text-align:center}
 .more-note h3{margin:0 0 8px;color:var(--teal);font-size:clamp(22px,3.4vw,34px);line-height:1;letter-spacing:-1px;text-transform:uppercase}
@@ -118,13 +90,11 @@ h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;let
 .modal .btn.alt:hover{background:var(--white);color:var(--black)}
 
 /* RESPONSIVE */
-@media(max-width:1000px){.g3{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:800px){
   .page-wrap{width:94%;padding-top:40px}
   h1{letter-spacing:-2px}
-  .g1{grid-template-columns:1fr}
-  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 20px}
   .modal{grid-template-columns:1fr;padding:24px;gap:20px}
   .modal-photo{max-width:340px;margin:0 auto}
   .book-strip{padding:24px}
@@ -133,13 +103,12 @@ h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;let
 @media(max-width:520px){
   .kicker{font-size:10px}
   h1{font-size:50px}
-  .g2{gap:26px 16px}
-  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .t1{box-shadow:8px 8px 0 var(--sh)}
-  .t2{box-shadow:6px 6px 0 var(--sh)}
-  .card{border-width:3px}
-  .t2 .quote{font-size:12px}
+  .grid{gap:28px 16px}
+  .card{border-width:3px;box-shadow:6px 6px 0 var(--sh)}
+  .body{padding:10px}
+  .quote{font-size:12px}
 }
+@media(max-width:360px){.grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}}
 
 /* SOCIAL CTA (same as homepage) */
@@ -241,8 +210,8 @@ h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;let
     <div class="kicker">GOAN COMEDY CARTEL</div>
     <h1>MEET<br>THE COMICS</h1>
     <p class="intro">
-      The Cartel is <strong>30+ stand-up comics strong</strong>. Start with our
-      headliners, then work your way down to the rest of the bill.
+      The Cartel is <strong>30+ stand-up comics strong</strong>. These are
+      Goa's funniest.
     </p>
     <div class="hero-actions">
       <a class="btn" href="/">See upcoming shows</a>
@@ -255,28 +224,12 @@ h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;let
     </p>
   </header>
 
-  <section class="tier" id="sec1" aria-labelledby="h1-headliners">
-    <div class="tier-head">
-      <h2 id="h1-headliners">Headliners</h2>
-      <p>Our strongest sets. Start here.</p>
-    </div>
-    <ul class="grid g1" id="tier1"></ul>
-  </section>
-
-  <section class="tier" id="sec2" aria-labelledby="h2-regulars">
-    <div class="tier-head">
-      <h2 id="h2-regulars">Regulars</h2>
-      <p>On the bill most weeks.</p>
-    </div>
-    <ul class="grid g2" id="tier2"></ul>
-  </section>
-
-  <section class="tier" id="sec3" aria-labelledby="h3-rest">
-    <div class="tier-head">
-      <h2 id="h3-rest">The rest of the Cartel</h2>
+  <section class="best" aria-labelledby="best-title">
+    <div class="best-head">
+      <h2 id="best-title">Goa's funniest</h2>
       <p>Tap a face to know more.</p>
     </div>
-    <ul class="grid g3" id="tier3"></ul>
+    <ul class="grid" id="comicsGrid"></ul>
   </section>
 
   <div class="more-note">
@@ -355,12 +308,8 @@ h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;let
 /* ==========================================
    COMICS
 
-   RANKING: the `tier` number decides where a comic appears.
-     tier: 1  = Headliners (biggest cards, full one-liner)
-     tier: 2  = Regulars   (medium cards, one-liner)
-     tier: 3  = The rest   (small tiles, name only)
-   Within a tier, comics show in the order listed here.
-   To promote or demote someone, change their tier number.
+   This list is the best of the 30+. Only the funniest go here.
+   Order = the order they appear on the page (put your best first).
    To add a comic: drop their photo in /gcc-comics-page/comics/
    and paste one more block.
 
@@ -371,30 +320,30 @@ h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;let
 
 const comics = [
 
-  { name: "Navin Noronha", photo: "navin-noronha.jpg", tier: 1,
+  { name: "Navin Noronha", photo: "navin-noronha.jpg",
     oneliner: "I laugh at the mundane in life, and the mundane laughs right back at me",
     signoff: "", tagline: "", bio: "", instagram: "" },
 
-  { name: "Aditiya Iyer", photo: "aditiya-iyer.jpg", tier: 1,
+  { name: "Aditiya Iyer", photo: "aditiya-iyer.jpg",
     oneliner: "All this standup is really bad for my knees",
     signoff: "circa 2026 BC", tagline: "", bio: "", instagram: "" },
 
-  { name: "Sarah Sheikh", photo: "sarah-sheikh.jpg", tier: 2,
+  { name: "Sarah Sheikh", photo: "sarah-sheikh.jpg",
     oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  { name: "Sumedh Natu", photo: "sumedh-natu.jpg", tier: 2,
+  { name: "Sumedh Natu", photo: "sumedh-natu.jpg",
     oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  { name: "Daniel Fernandes", photo: "daniel-fernandes.jpg", tier: 2,
+  { name: "Daniel Fernandes", photo: "daniel-fernandes.jpg",
     oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  { name: "Sonali Kathuria", photo: "sonali-kathuria.jpg", tier: 3,
+  { name: "Sonali Kathuria", photo: "sonali-kathuria.jpg",
     oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  { name: "Dale Godinho", photo: "dale-godinho.jpg", tier: 3,
+  { name: "Dale Godinho", photo: "dale-godinho.jpg",
     oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  { name: "Sunali Panda", photo: "sunali-panda.jpg", tier: 3,
+  { name: "Sunali Panda", photo: "sunali-panda.jpg",
     oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" }
 
 ];
@@ -417,18 +366,18 @@ function slugify(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
-function makeCard(comic, tier, eager) {
+function makeCard(comic, index) {
   const li = document.createElement("li");
   const card = document.createElement("button");
   card.type = "button";
-  card.className = "card t" + tier;
+  card.className = "card";
   card.setAttribute("aria-label", comic.name + " — open profile");
 
   const img = document.createElement("img");
   img.className = "photo";
   img.src = PHOTO_PATH + comic.photo;
   img.alt = comic.name + ", Goa stand-up comedian";
-  img.loading = eager ? "eager" : "lazy";
+  img.loading = index < 4 ? "eager" : "lazy";
   img.width = 800;
   img.height = 800;
 
@@ -440,24 +389,16 @@ function makeCard(comic, tier, eager) {
   name.textContent = comic.name;
   body.appendChild(name);
 
-  /* one-liners only on tiers 1 and 2, and only if written */
-  if (tier < 3 && comic.oneliner) {
+  if (comic.oneliner) {
     const quote = document.createElement("span");
     quote.className = "quote";
-    quote.textContent = "“" + comic.oneliner + "”";
+    quote.textContent = "\u201C" + comic.oneliner + "\u201D";
     if (comic.signoff) {
       const sign = document.createElement("small");
-      sign.textContent = "— " + comic.signoff;
+      sign.textContent = "\u2014 " + comic.signoff;
       quote.appendChild(sign);
     }
     body.appendChild(quote);
-  }
-
-  if (tier === 1) {
-    const more = document.createElement("span");
-    more.className = "more";
-    more.textContent = "More about " + comic.name.split(" ")[0] + " →";
-    body.appendChild(more);
   }
 
   card.appendChild(img);
@@ -468,15 +409,9 @@ function makeCard(comic, tier, eager) {
 }
 
 function renderComics() {
-  [1, 2, 3].forEach(function(tier) {
-    const list = document.getElementById("tier" + tier);
-    const section = document.getElementById("sec" + tier);
-    const group = comics.filter(function(c) { return (c.tier || 3) === tier; });
-    list.innerHTML = "";
-    if (!group.length) { section.hidden = true; return; }
-    section.hidden = false;
-    group.forEach(function(c, i) { list.appendChild(makeCard(c, tier, tier === 1 || i < 3)); });
-  });
+  const grid = document.getElementById("comicsGrid");
+  grid.innerHTML = "";
+  comics.forEach(function(c, i) { grid.appendChild(makeCard(c, i)); });
 }
 
 function openComic(comic, trigger) {
