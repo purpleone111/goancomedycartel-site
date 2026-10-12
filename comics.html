@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<title>Meet The Comics | Goa Stand-Up Comedians | Goan Comedy Cartel</title>
+<meta name="description" content="Meet the stand-up comedians of the Goan Comedy Cartel — the Goa comics behind the shows, open mics and comedy nights. See who's who, then book a comedian in Goa for your event.">
+<link rel="canonical" href="https://goancomedycartel.com/comics.html">
+
+<!-- Social share preview -->
+<meta property="og:title" content="Meet The Comics | Goa Stand-Up Comedians | Goan Comedy Cartel">
+<meta property="og:description" content="Meet the stand-up comedians of the Goan Comedy Cartel — the Goa comics behind the shows, open mics and comedy nights.">
+<meta property="og:image" content="https://goancomedycartel.com/Social-Image.jpg">
+<meta property="og:url" content="https://goancomedycartel.com/comics.html">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meet The Comics | Goa Stand-Up Comedians | Goan Comedy Cartel">
+<meta name="twitter:description" content="Meet the stand-up comedians of the Goan Comedy Cartel — the Goa comics behind the shows, open mics and comedy nights.">
+<meta name="twitter:image" content="https://goancomedycartel.com/Social-Image.jpg">
+
+<style>
+:root {
+  --black: #050505;
+  --pink: #ff2f9f;
+  --teal: #00f5d4;
+  --yellow: #ffe600;
+  --orange: #ff6b1a;
+  --violet: #b14aed;
+  --lime: #c6ff00;
+  --white: #fff;
+  --grey: #161616;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial Black, Impact, Arial, sans-serif;
+}
+
+body { overflow-x: hidden; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================
+   FLOATING SQUARES
+========================= */
+
+.shape { position: fixed; z-index: 0; pointer-events: none; }
+.square-1 { width: 55px; height: 55px; background: var(--teal);   top: 8%;     left: 63%;  transform: rotate(14deg); }
+.square-2 { width: 32px; height: 32px; background: var(--yellow); top: 20%;    right: 5%;  transform: rotate(-18deg); }
+.square-3 { width: 70px; height: 70px; background: var(--pink);   bottom: 10%; left: 5%;   transform: rotate(-12deg); }
+.square-4 { width: 25px; height: 25px; background: var(--teal);   bottom: 25%; right: 3%;  transform: rotate(25deg); }
+.square-5 { width: 42px; height: 42px; background: var(--yellow); top: 48%;    left: 1%;   transform: rotate(8deg); }
+.square-6 { width: 28px; height: 28px; background: var(--pink);   top: 65%;    right: 6%;  transform: rotate(-25deg); }
+
+/* =========================
+   MAIN
+========================= */
+
+.page-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(1150px, 92%);
+  margin: 0 auto;
+  padding: 60px 0 40px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header { position: relative; margin-bottom: 55px; }
+
+.kicker {
+  color: var(--teal);
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  color: var(--pink);
+  font-size: clamp(55px, 10vw, 125px);
+  line-height: 0.82;
+  letter-spacing: -6px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 var(--teal);
+}
+
+.header-tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 9px 15px;
+  margin-top: 25px;
+  transform: rotate(-2deg);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   COMICS GRID
+========================= */
+
+.comics-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 38px 28px;
+}
+
+.comic-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  border: 4px solid var(--black);
+  box-shadow: 9px 9px 0 var(--sh, var(--pink));
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.comic-card:hover,
+.comic-card:focus-visible {
+  transform: translate(-3px, -3px) rotate(-1deg);
+  box-shadow: 13px 13px 0 var(--sh, var(--pink));
+  outline: none;
+}
+
+.comic-card:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+
+.comic-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--grey);
+}
+
+.comic-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 12px 13px;
+  background: var(--black);
+  border-top: 4px solid var(--sh, var(--pink));
+}
+
+.comic-name {
+  font-size: clamp(14px, 1.7vw, 19px);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.comic-arrow {
+  flex: 0 0 auto;
+  color: var(--sh, var(--pink));
+  font-size: 18px;
+  transition: transform .15s ease;
+}
+
+.comic-card:hover .comic-arrow,
+.comic-card:focus-visible .comic-arrow { transform: translateX(4px); }
+
+/* =========================
+   BOOKING STRIP
+========================= */
+
+.book-strip {
+  position: relative;
+  margin: 75px 0 20px;
+  padding: 30px 32px;
+  background: var(--yellow);
+  color: var(--black);
+  border: 5px solid var(--black);
+  box-shadow: 12px 12px 0 var(--pink);
+  transform: rotate(-1deg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.book-strip h2 {
+  margin: 0;
+  font-size: clamp(26px, 4.4vw, 46px);
+  line-height: 0.92;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.book-strip p {
+  margin: 10px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.ticket-btn {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 20px;
+  border: 3px solid var(--black);
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: 0.15s;
+  white-space: nowrap;
+}
+
+.ticket-btn:hover { background: var(--white); color: var(--black); }
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+  position: relative;
+  width: min(780px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: var(--yellow);
+  color: var(--black);
+  border: 5px solid var(--black);
+  padding: 30px;
+  box-shadow: 12px 12px 0 var(--pink);
+  transform: rotate(-1deg);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background: var(--teal);
+  color: var(--black);
+  border: 3px solid var(--black);
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.modal-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 4px solid var(--black);
+  box-shadow: 8px 8px 0 var(--black);
+  display: block;
+}
+
+.modal-kicker {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.modal h2 {
+  margin: 0 40px 16px 0;
+  font-size: clamp(32px, 6vw, 54px);
+  line-height: 0.88;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.modal-tagline {
+  margin: 0 0 14px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.modal-bio {
+  margin: 0 0 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.modal-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+
+.modal .ticket-btn { background: var(--pink); color: var(--black); }
+.modal .ticket-btn:hover { background: var(--black); color: var(--white); }
+
+.modal .ticket-btn.alt { background: var(--black); color: var(--white); }
+.modal .ticket-btn.alt:hover { background: var(--white); color: var(--black); }
+
+/* =========================
+   MOBILE (page + grid + modal)
+========================= */
+
+@media (max-width: 1000px) {
+  .comics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 800px) {
+  .page-wrap { width: 94%; padding-top: 40px; }
+  h1 { letter-spacing: -3px; }
+  .comics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 20px; }
+  .modal { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
+  .modal-photo { max-width: 340px; margin: 0 auto; }
+  .book-strip { padding: 24px; }
+}
+
+@media (max-width: 520px) {
+  .page-wrap { padding-top: 30px; }
+  .kicker { font-size: 10px; }
+  h1 { font-size: 58px; }
+  .header-tag { font-size: 10px; }
+  .comics-grid { gap: 26px 16px; }
+  .comic-card { box-shadow: 6px 6px 0 var(--sh, var(--pink)); border-width: 3px; }
+  .comic-label { padding: 9px 8px 10px; border-top-width: 3px; }
+  .comic-arrow { display: none; }
+  .square-1 { width: 30px; height: 30px; }
+  .square-3 { width: 40px; height: 40px; }
+}
+
+/* =========================
+   SOCIAL CTA SECTION (same as homepage)
+========================= */
+
+.gcc-cta-wrapper { width: 100%; background: var(--black); }
+
+.cta-section {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 60px 5%;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.cta-grid {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 45px;
+  align-items: stretch;
+}
+
+.cta-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
+
+.cta-icon {
+  width: 120px;
+  height: 120px;
+  flex: 0 0 120px;
+  border: 7px solid #000;
+  transform: rotate(-5deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-icon-ig { background: var(--pink); box-shadow: 12px 12px 0 var(--teal); }
+.cta-icon-wa { background: var(--lime); box-shadow: 12px 12px 0 var(--violet); }
+.cta-icon-wa svg { width: 74px; height: 74px; display: block; }
+
+.instagram-camera { width: 76px; height: 76px; border: 7px solid #000; border-radius: 25px; position: relative; }
+.instagram-lens { width: 34px; height: 34px; border: 7px solid #000; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.instagram-dot { width: 10px; height: 10px; background: #000; border-radius: 50%; position: absolute; top: 11px; right: 11px; }
+
+.cta-kicker { font-family: Arial, sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 3px; color: var(--teal); margin-bottom: 10px; }
+.cta-card-wa .cta-kicker { color: var(--lime); }
+
+.cta-title {
+  margin: 0;
+  font-family: Arial Black, Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 4.2vw, 56px);
+  line-height: 0.88;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.cta-card-ig .cta-title { color: var(--pink); text-shadow: 3px 3px 0 var(--teal); }
+.cta-card-wa .cta-title { color: var(--lime); text-shadow: 3px 3px 0 var(--violet); }
+
+.cta-handle { margin-top: 16px; font-family: Arial, sans-serif; font-weight: 800; font-size: 18px; color: var(--white); }
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 25px;
+  color: #000;
+  border: 5px solid #000;
+  font-family: Arial Black, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: 0.15s;
+}
+
+.cta-button-ig { background: var(--yellow); box-shadow: 8px 8px 0 var(--pink); }
+.cta-button-ig:hover { transform: translate(3px, 3px); box-shadow: 5px 5px 0 var(--pink); }
+.cta-button-wa { background: var(--teal); box-shadow: 8px 8px 0 var(--violet); }
+.cta-button-wa:hover { transform: translate(3px, 3px); box-shadow: 5px 5px 0 var(--violet); }
+
+.ig-shape { position: absolute; width: 35px; height: 35px; border: 5px solid #000; z-index: 1; }
+.ig-pink { background: var(--pink); right: 6%; top: 12%; transform: rotate(17deg); }
+.ig-yellow { background: var(--yellow); right: 12%; bottom: 10%; transform: rotate(-12deg); }
+.ig-teal { background: var(--teal); left: 5%; bottom: 15%; transform: rotate(20deg); }
+
+@media (max-width: 800px) {
+  .cta-grid { grid-template-columns: 1fr; gap: 60px; }
+  .cta-section { padding: 50px 7%; }
+}
+
+@media (max-width: 520px) {
+  .cta-icon { width: 100px; height: 100px; flex: 0 0 100px; border-width: 6px; box-shadow: 9px 9px 0 var(--teal); }
+  .cta-icon-wa { box-shadow: 9px 9px 0 var(--violet); }
+  .cta-icon-wa svg { width: 60px; height: 60px; }
+  .instagram-camera { width: 62px; height: 62px; border-width: 6px; }
+  .instagram-lens { width: 28px; height: 28px; border-width: 6px; }
+  .instagram-dot { width: 8px; height: 8px; top: 9px; right: 9px; }
+  .cta-kicker { font-size: 11px; letter-spacing: 2px; }
+  .cta-title { font-size: 38px; letter-spacing: -1px; }
+  .cta-handle { font-size: 16px; }
+  .cta-button { font-size: 14px; padding: 12px 20px; }
+}
+
+/* =========================
+   SITE NAVIGATION (now with a 5th link)
+========================= */
+
+.site-nav{
+  position:relative;
+  z-index:1000;
+  width:100%;
+  min-height:78px;
+  padding:10px 4%;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  gap:34px;
+  font-family:Arial Black,Impact,Arial,sans-serif;
+  border-bottom:2px solid #b14aed;
+}
+
+.site-nav-brand{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 88px;
+  height:58px;
+  color:#fff;
+  text-decoration:none;
+  transform:rotate(-2deg);
+  transition:transform .18s ease;
+}
+
+.site-nav-brand:hover{ transform:rotate(1deg) scale(1.07); }
+
+.site-nav-brand img{ width:84px; height:56px; object-fit:contain; display:block; }
+
+.site-nav-brand span{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+.site-nav-links{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:28px;
+}
+
+.site-nav-links a{
+  position:relative;
+  display:inline-block;
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:900;
+  line-height:1.1;
+  text-transform:uppercase;
+  letter-spacing:.2px;
+  white-space:nowrap;
+  padding:13px 0 11px;
+  transition:color .16s ease, transform .16s ease;
+}
+
+.site-nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:4px;
+  width:29px;
+  height:4px;
+  transform:rotate(-2deg);
+  transform-origin:left center;
+  transition:width .18s ease, transform .18s ease;
+}
+.site-nav-links a:nth-child(1)::after{background:#ffe600}
+.site-nav-links a:nth-child(2)::after{background:#00f5d4}
+.site-nav-links a:nth-child(3)::after{background:#ff2f9f}
+.site-nav-links a:nth-child(4)::after{background:#c6ff00}
+.site-nav-links a:nth-child(5)::after{background:#ff6b1a}
+
+.site-nav-links a:hover,
+.site-nav-links a:focus-visible,
+.site-nav-links a[aria-current="page"]{
+  color:#00f5d4;
+  transform:translateY(-2px);
+}
+
+.site-nav-links a:hover::after,
+.site-nav-links a:focus-visible::after,
+.site-nav-links a[aria-current="page"]::after{
+  width:100%;
+  transform:rotate(1deg);
+}
+
+.site-nav-toggle{
+  display:none;
+  margin-left:auto;
+  width:46px;
+  height:42px;
+  padding:7px 8px;
+  border:2px solid #00f5d4;
+  background:#050505;
+  box-shadow:4px 4px 0 #ff2f9f;
+  color:#fff;
+  cursor:pointer;
+  transform:rotate(-2deg);
+}
+
+.site-nav-toggle span{ display:block; height:3px; margin:5px 0; background:currentColor; }
+
+@media(max-width:1200px){
+  .site-nav{ flex-wrap:wrap; padding:9px 5%; }
+  .site-nav-toggle{ display:block; }
+  .site-nav-links{
+    display:none;
+    width:100%;
+    margin:5px 0 7px;
+    padding:5px 0;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:3px;
+  }
+  .site-nav.site-nav-open .site-nav-links{ display:flex; }
+  .site-nav-links a{ font-size:13px; padding:11px 0; white-space:normal; }
+}
+
+@media(max-width:520px){
+  .site-nav{ min-height:66px; padding:8px 4%; }
+  .site-nav-brand{ flex-basis:72px; height:48px; }
+  .site-nav-brand img{ width:70px; height:46px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SITE NAVIGATION -->
+<nav class="site-nav" id="siteNav" aria-label="Main navigation">
+  <a class="site-nav-brand" href="/">
+    <img src="logo.gif" alt="">
+    <span>Goan Comedy Cartel</span>
+  </a>
+  <button class="site-nav-toggle" id="siteNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="site-nav-links" id="siteNavLinks">
+    <a href="/">Live Stand-Up Comedy in Goa</a>
+    <a href="/about.html">About us</a>
+    <a href="/book-a-comic.html">Book A Comedian In Goa</a>
+    <a href="/live-shows.html">Past &amp; Featured Comedy Shows</a>
+    <a href="/comics.html" aria-current="page">Meet The Comics</a>
+  </div>
+</nav>
+
+<!-- FLOATING DESIGN ELEMENTS -->
+<div class="shape square-1"></div>
+<div class="shape square-2"></div>
+<div class="shape square-3"></div>
+<div class="shape square-4"></div>
+<div class="shape square-5"></div>
+<div class="shape square-6"></div>
+
+<main class="page-wrap">
+
+  <header class="header">
+    <div class="kicker">GOAN COMEDY CARTEL</div>
+    <h1>MEET<br>THE COMICS</h1>
+    <div class="header-tag">THE PEOPLE BEHIND THE MIC ↓</div>
+    <p class="sr-only">
+      Meet the stand-up comedians of the Goan Comedy Cartel — the Goa
+      comics performing at comedy shows, open mics and comedy nights
+      across Goa. Tap a comic to learn more or book them for your event.
+    </p>
+  </header>
+
+  <ul class="comics-grid" id="comicsGrid"></ul>
+
+  <aside class="book-strip">
+    <div>
+      <h2>WANT ONE OF THEM<br>AT YOUR EVENT?</h2>
+      <p>Weddings, parties, corporate nights, cafés. We'll sort it.</p>
+    </div>
+    <a class="ticket-btn" href="/book-a-comic.html">BOOK A COMIC →</a>
+  </aside>
+
+</main>
+
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+
+    <button class="close" id="modalClose" aria-label="Close">×</button>
+
+    <img class="modal-photo" id="modalPhoto" src="" alt="">
+
+    <div>
+      <div class="modal-kicker">GOAN COMEDY CARTEL</div>
+      <h2 id="modalName"></h2>
+      <p class="modal-tagline" id="modalTagline"></p>
+      <p class="modal-bio" id="modalBio"></p>
+
+      <div class="modal-actions">
+        <a class="ticket-btn" id="modalBook" href="/book-a-comic.html">BOOK THIS COMIC →</a>
+        <a class="ticket-btn alt" id="modalInsta" href="#" target="_blank" rel="noopener noreferrer">INSTAGRAM →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- SOCIAL CTA — same block as the homepage -->
+<div class="gcc-cta-wrapper">
+  <section class="cta-section">
+    <div class="cta-grid">
+
+      <div class="cta-card cta-card-ig">
+        <div class="cta-icon cta-icon-ig">
+          <div class="instagram-camera">
+            <div class="instagram-lens"></div>
+            <div class="instagram-dot"></div>
+          </div>
+        </div>
+        <div class="cta-copy">
+          <div class="cta-kicker">MORE CHAOS ONLINE</div>
+          <h2 class="cta-title">FOLLOW US<br>ON INSTAGRAM</h2>
+          <div class="cta-handle">@goancomedycartel</div>
+          <a class="cta-button cta-button-ig" href="https://www.instagram.com/goancomedycartel/" target="_blank" rel="noopener noreferrer">FOLLOW US →</a>
+        </div>
+      </div>
+
+      <div class="cta-card cta-card-wa">
+        <div class="cta-icon cta-icon-wa">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#000" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.548 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+        </div>
+        <div class="cta-copy">
+          <div class="cta-kicker">NEVER MISS A SHOW</div>
+          <h2 class="cta-title">JOIN OUR<br>WHATSAPP</h2>
+          <div class="cta-handle">Goan Comedy Cartel Updates</div>
+          <a class="cta-button cta-button-wa" href="https://chat.whatsapp.com/FiIIjuxzlEy50DzeE1SaVx" target="_blank" rel="noopener noreferrer">JOIN NOW →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ig-shape ig-pink"></div>
+    <div class="ig-shape ig-yellow"></div>
+    <div class="ig-shape ig-teal"></div>
+  </section>
+</div>
+
+
+<script>
+
+/* ==========================================
+   COMICS
+
+   To add a comic: drop their photo in /comics/ and paste
+   one more object in this array. The grid, popup and
+   Google (Person) data all build from this list.
+
+   - photo:     file name inside /comics/
+   - shadow:    offset-shadow colour for their card
+                (pink, teal, yellow, lime, orange, violet)
+   - tagline / bio / instagram: optional. Leave "" and
+                that line simply doesn't show in the popup.
+                instagram is the full profile URL.
+========================================== */
+
+const comics = [
+
+  { name: "Navin Noronha",    photo: "navin-noronha.jpg",    shadow: "pink",   tagline: "", bio: "", instagram: "" },
+  { name: "Sarah Sheikh",     photo: "sarah-sheikh.jpg",     shadow: "teal",   tagline: "", bio: "", instagram: "" },
+  { name: "Sumedh Natu",      photo: "sumedh-natu.jpg",      shadow: "yellow", tagline: "", bio: "", instagram: "" },
+  { name: "Aditiya Iyer",     photo: "aditiya-iyer.jpg",     shadow: "lime",   tagline: "", bio: "", instagram: "" },
+  { name: "Daniel Fernandes", photo: "daniel-fernandes.jpg", shadow: "orange", tagline: "", bio: "", instagram: "" },
+  { name: "Sonali Kathuria",  photo: "sonali-kathuria.jpg",  shadow: "violet", tagline: "", bio: "", instagram: "" },
+  { name: "Dale Godinho",     photo: "dale-godinho.jpg",     shadow: "teal",   tagline: "", bio: "", instagram: "" },
+  { name: "Sunali Panda",     photo: "sunali-panda.jpg",     shadow: "yellow", tagline: "", bio: "", instagram: "" }
+
+];
+
+const PHOTO_PATH = "comics/";
+const SITE = "https://goancomedycartel.com/";
+
+
+/* ==========================================
+   ELEMENTS
+========================================== */
+
+const grid = document.getElementById("comicsGrid");
+const modalOverlay = document.getElementById("modalOverlay");
+const modalClose = document.getElementById("modalClose");
+const modalPhoto = document.getElementById("modalPhoto");
+const modalName = document.getElementById("modalName");
+const modalTagline = document.getElementById("modalTagline");
+const modalBio = document.getElementById("modalBio");
+const modalBook = document.getElementById("modalBook");
+const modalInsta = document.getElementById("modalInsta");
+
+let lastFocused = null;
+
+
+/* ==========================================
+   HELPERS
+========================================== */
+
+function slugify(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+
+/* ==========================================
+   RENDER GRID
+========================================== */
+
+function renderComics() {
+
+  grid.innerHTML = "";
+
+  comics.forEach(function(comic, index) {
+
+    const li = document.createElement("li");
+
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "comic-card";
+    card.style.setProperty("--sh", "var(--" + comic.shadow + ")");
+    card.setAttribute("aria-label", comic.name + " — open profile");
+
+    const img = document.createElement("img");
+    img.className = "comic-photo";
+    img.src = PHOTO_PATH + comic.photo;
+    img.alt = comic.name + ", Goa stand-up comedian";
+    img.loading = index < 4 ? "eager" : "lazy";
+    img.width = 800;
+    img.height = 800;
+
+    const label = document.createElement("span");
+    label.className = "comic-label";
+
+    const name = document.createElement("span");
+    name.className = "comic-name";
+    name.textContent = comic.name;
+
+    const arrow = document.createElement("span");
+    arrow.className = "comic-arrow";
+    arrow.textContent = "→";
+    arrow.setAttribute("aria-hidden", "true");
+
+    label.appendChild(name);
+    label.appendChild(arrow);
+    card.appendChild(img);
+    card.appendChild(label);
+
+    card.addEventListener("click", function() { openComic(index, card); });
+
+    li.appendChild(card);
+    grid.appendChild(li);
+
+  });
+
+}
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+function openComic(index, trigger) {
+
+  const comic = comics[index];
+  lastFocused = trigger || null;
+
+  modalPhoto.src = PHOTO_PATH + comic.photo;
+  modalPhoto.alt = comic.name + ", Goa stand-up comedian";
+  modalName.textContent = comic.name;
+
+  modalTagline.textContent = comic.tagline;
+  modalTagline.style.display = comic.tagline ? "block" : "none";
+
+  modalBio.textContent = comic.bio;
+  modalBio.style.display = comic.bio ? "block" : "none";
+
+  modalBook.href = "/book-a-comic.html?comic=" + slugify(comic.name);
+
+  if (comic.instagram) {
+    modalInsta.href = comic.instagram;
+    modalInsta.style.display = "inline-block";
+  } else {
+    modalInsta.style.display = "none";
+  }
+
+  modalOverlay.classList.add("active");
+  modalClose.focus();
+
+}
+
+function closeModal() {
+  modalOverlay.classList.remove("active");
+  if (lastFocused) lastFocused.focus();
+}
+
+modalClose.addEventListener("click", closeModal);
+
+modalOverlay.addEventListener("click", function(event) {
+  if (event.target === modalOverlay) closeModal();
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") closeModal();
+});
+
+
+/* ==========================================
+   PERSON STRUCTURED DATA (JSON-LD)
+
+   One schema.org Person per comic, built from the same list,
+   so it never drifts out of sync.
+========================================== */
+
+function renderPersonSchema() {
+
+  comics.forEach(function(comic) {
+
+    const person = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": comic.name,
+      "jobTitle": "Stand-up comedian",
+      "image": SITE + PHOTO_PATH + comic.photo,
+      "url": SITE + "comics.html",
+      "workLocation": { "@type": "Place", "name": "Goa, India" },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Goan Comedy Cartel",
+        "url": SITE
+      }
+    };
+
+    if (comic.bio) person.description = comic.bio;
+    if (comic.instagram) person.sameAs = [comic.instagram];
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(person);
+    document.head.appendChild(script);
+
+  });
+
+}
+
+
+/* ==========================================
+   START
+========================================== */
+
+renderComics();
+renderPersonSchema();
+
+</script>
+
+
+<script>
+(function(){
+  var nav=document.getElementById("siteNav");
+  var toggle=document.getElementById("siteNavToggle");
+  if(!nav||!toggle)return;
+  toggle.addEventListener("click",function(){
+    var open=nav.classList.toggle("site-nav-open");
+    toggle.setAttribute("aria-expanded",open?"true":"false");
+    toggle.setAttribute("aria-label",open?"Close navigation":"Open navigation");
+  });
+})();
+</script>
+
+</body>
+</html>
