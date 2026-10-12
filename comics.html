@@ -11,857 +11,213 @@
 <meta name="description" content="The Goan Comedy Cartel is 30+ stand-up comedians strong. Meet the best of the Goa comics, read their one-liners, then book a comedian in Goa for your event.">
 <link rel="canonical" href="https://goancomedycartel.com/comics.html">
 
-<!-- Social share preview -->
 <meta property="og:title" content="Meet The Comics | 30+ Goa Stand-Up Comedians | Goan Comedy Cartel">
 <meta property="og:description" content="30+ stand-up comedians. These are the best of the Goan Comedy Cartel. Read their one-liners and book a comic for your event.">
 <meta property="og:image" content="https://goancomedycartel.com/Social-Image.jpg">
 <meta property="og:url" content="https://goancomedycartel.com/comics.html">
 <meta property="og:type" content="website">
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Meet The Comics | 30+ Goa Stand-Up Comedians | Goan Comedy Cartel">
 <meta name="twitter:description" content="30+ stand-up comedians. These are the best of the Goan Comedy Cartel. Read their one-liners and book a comic for your event.">
 <meta name="twitter:image" content="https://goancomedycartel.com/Social-Image.jpg">
 
 <style>
-:root {
-  --black: #050505;
-  --pink: #ff2f9f;
-  --teal: #00f5d4;
-  --yellow: #ffe600;
-  --orange: #ff6b1a;
-  --violet: #b14aed;
-  --lime: #c6ff00;
-  --white: #fff;
-  --grey: #161616;
-}
-
-* { box-sizing: border-box; }
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--black);
-  color: var(--white);
-  font-family: Arial Black, Impact, Arial, sans-serif;
-}
-
-body { overflow-x: hidden; }
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* =========================
-   FLOATING SQUARES
-========================= */
-
-.shape { position: fixed; z-index: 0; pointer-events: none; }
-.square-1 { width: 55px; height: 55px; background: var(--teal);   top: 8%;     left: 63%;  transform: rotate(14deg); }
-.square-2 { width: 32px; height: 32px; background: var(--yellow); top: 20%;    right: 5%;  transform: rotate(-18deg); }
-.square-3 { width: 70px; height: 70px; background: var(--pink);   bottom: 10%; left: 5%;   transform: rotate(-12deg); }
-.square-4 { width: 25px; height: 25px; background: var(--teal);   bottom: 25%; right: 3%;  transform: rotate(25deg); }
-.square-5 { width: 42px; height: 42px; background: var(--yellow); top: 48%;    left: 1%;   transform: rotate(8deg); }
-.square-6 { width: 28px; height: 28px; background: var(--pink);   top: 65%;    right: 6%;  transform: rotate(-25deg); }
-
-/* =========================
-   MAIN
-========================= */
-
-.page-wrap {
-  position: relative;
-  z-index: 2;
-  width: min(1150px, 92%);
-  margin: 0 auto;
-  padding: 60px 0 40px;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.header {
-  position: relative;
-  margin-bottom: 60px;
-}
-
-.kicker {
-  color: var(--teal);
-  font-size: 14px;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
-}
-
-h1 {
-  margin: 0;
-  color: var(--pink);
-  font-size: clamp(55px, 10vw, 125px);
-  line-height: 0.82;
-  letter-spacing: -6px;
-  text-transform: uppercase;
-  text-shadow: 3px 3px 0 var(--teal);
-}
-
-.header-tag {
-  display: inline-block;
-  background: var(--yellow);
-  color: var(--black);
-  padding: 9px 15px;
-  margin-top: 25px;
-  transform: rotate(-2deg);
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-.intro {
-  max-width: 640px;
-  margin: 28px 0 0;
-  font-family: Arial, sans-serif;
-  font-size: clamp(16px, 2vw, 19px);
-  font-weight: 700;
-  line-height: 1.55;
-  color: #e9e9e9;
-}
-
-.intro strong {
-  color: var(--yellow);
-  font-weight: 900;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 26px;
-}
-
-/* Big "30+" sticker, top right of the hero */
-
-.count-sticker {
-  position: absolute;
-  right: 0;
-  top: 8px;
-  width: 190px;
-  height: 190px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--yellow);
-  color: var(--black);
-  border: 6px solid var(--black);
-  box-shadow: 12px 12px 0 var(--pink);
-  transform: rotate(7deg);
-}
-
-.count-sticker b {
-  font-size: 68px;
-  line-height: 0.9;
-  letter-spacing: -4px;
-}
-
-.count-sticker span {
-  margin-top: 6px;
-  font-size: 13px;
-  letter-spacing: 1px;
-  line-height: 1.15;
-  text-transform: uppercase;
-}
-
-/* =========================
-   SECTION HEADING
-========================= */
-
-.section-heading {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin: 0 0 14px;
-}
-
-.section-heading h2 {
-  margin: 0;
-  color: var(--pink);
-  font-size: clamp(28px, 5vw, 45px);
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -2px;
-}
-
-.section-heading span {
-  flex: 1;
-  height: 5px;
-  background: var(--teal);
-}
-
-.section-note {
-  margin: 0 0 34px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--teal);
-}
-
-/* =========================
-   COMICS GRID
-========================= */
-
-.comics-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 42px 28px;
-}
-
-.comics-grid li {
-  display: flex;
-}
-
-.comic-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: var(--black);
-  color: var(--white);
-  border: 4px solid var(--black);
-  box-shadow: 9px 9px 0 var(--sh, var(--pink));
-  font-family: inherit;
-  text-align: left;
-  cursor: pointer;
-  transform: rotate(var(--tilt, 0deg));
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.comics-grid li:nth-child(odd)  .comic-card { --tilt: -1deg; }
-.comics-grid li:nth-child(even) .comic-card { --tilt: 1deg; }
-
-.comic-card:hover,
-.comic-card:focus-visible {
-  transform: translate(-3px, -5px) rotate(0deg);
-  box-shadow: 14px 14px 0 var(--sh, var(--pink));
-  outline: none;
-}
-
-.comic-card:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
-
-.comic-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  background: var(--grey);
-}
-
-.comic-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 14px 14px 16px;
-  background: var(--black);
-  border-top: 4px solid var(--sh, var(--pink));
-}
-
-.comic-name-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.comic-name {
-  color: var(--sh, var(--pink));
-  font-size: clamp(15px, 1.8vw, 20px);
-  line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-}
-
-.comic-arrow {
-  flex: 0 0 auto;
-  color: var(--sh, var(--pink));
-  font-size: 18px;
-  transition: transform .15s ease;
-}
-
-.comic-card:hover .comic-arrow,
-.comic-card:focus-visible .comic-arrow { transform: translateX(4px); }
-
-/* The one-liner */
-
-.comic-quote {
-  position: relative;
-  display: block;
-  margin: 0;
-  padding-top: 20px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--white);
-}
-
-.comic-quote::before {
-  content: "\201C";
-  position: absolute;
-  top: -10px;
-  left: -2px;
-  font-family: Arial Black, Impact, Arial, sans-serif;
-  font-size: 52px;
-  line-height: 1;
-  color: var(--sh, var(--pink));
-}
-
-.comic-quote.is-empty {
-  color: #8a8a8a;
-  font-style: italic;
-  font-weight: 700;
-}
-
-.comic-signoff {
-  display: block;
-  margin-top: 6px;
-  font-size: 12px;
-  font-style: italic;
-  color: #b8b8b8;
-}
-
-/* =========================
-   "PLENTY MORE" + BOOKING STRIP
-========================= */
-
-.more-note {
-  margin: 70px 0 0;
-  padding: 26px 28px;
-  border: 4px dashed var(--teal);
-  text-align: center;
-}
-
-.more-note h3 {
-  margin: 0 0 8px;
-  color: var(--teal);
-  font-size: clamp(22px, 3.4vw, 34px);
-  line-height: 1;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-}
-
-.more-note p {
-  margin: 0 auto;
-  max-width: 620px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.5;
-  color: #dcdcdc;
-}
-
-.book-strip {
-  position: relative;
-  margin: 60px 0 20px;
-  padding: 30px 32px;
-  background: var(--yellow);
-  color: var(--black);
-  border: 5px solid var(--black);
-  box-shadow: 12px 12px 0 var(--pink);
-  transform: rotate(-1deg);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.book-strip h2 {
-  margin: 0;
-  font-size: clamp(26px, 4.4vw, 46px);
-  line-height: 0.92;
-  letter-spacing: -2px;
-  text-transform: uppercase;
-}
-
-.book-strip p {
-  margin: 10px 0 0;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 900;
-}
-
-.ticket-btn {
-  display: inline-block;
-  background: var(--black);
-  color: var(--white);
-  text-decoration: none;
-  padding: 14px 20px;
-  border: 3px solid var(--black);
-  font-size: 12px;
-  letter-spacing: 1px;
-  transition: 0.15s;
-  white-space: nowrap;
-}
-
-.ticket-btn:hover { background: var(--white); color: var(--black); }
-
-/* Buttons in the dark hero need their own look */
-
-.hero-actions .ticket-btn {
-  background: var(--pink);
-  color: var(--black);
-  border-color: var(--black);
-  box-shadow: 6px 6px 0 var(--teal);
-}
-
-.hero-actions .ticket-btn:hover {
-  background: var(--white);
-  transform: translate(2px, 2px);
-  box-shadow: 4px 4px 0 var(--teal);
-}
-
-.hero-actions .ticket-btn.alt {
-  background: var(--yellow);
-  box-shadow: 6px 6px 0 var(--pink);
-}
-
-.hero-actions .ticket-btn.alt:hover {
-  background: var(--white);
-  box-shadow: 4px 4px 0 var(--pink);
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.88);
-  z-index: 100;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.modal-overlay.active { display: flex; }
-
-.modal {
-  position: relative;
-  width: min(780px, 100%);
-  max-height: calc(100vh - 40px);
-  overflow-y: auto;
-  background: var(--yellow);
-  color: var(--black);
-  border: 5px solid var(--black);
-  padding: 30px;
-  box-shadow: 12px 12px 0 var(--pink);
-  transform: rotate(-1deg);
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 28px;
-  align-items: center;
-}
-
-.close {
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  z-index: 2;
-  width: 40px;
-  height: 40px;
-  background: var(--teal);
-  color: var(--black);
-  border: 3px solid var(--black);
-  font-size: 22px;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-.modal-photo {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border: 4px solid var(--black);
-  box-shadow: 8px 8px 0 var(--black);
-  display: block;
-}
-
-.modal-kicker {
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.modal h2 {
-  margin: 0 40px 16px 0;
-  font-size: clamp(32px, 6vw, 54px);
-  line-height: 0.88;
-  letter-spacing: -2px;
-  text-transform: uppercase;
-}
-
-.modal-quote {
-  margin: 0 0 16px;
-  padding: 14px 16px;
-  background: var(--black);
-  color: var(--white);
-  border-left: 8px solid var(--pink);
-  font-family: Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 900;
-  line-height: 1.35;
-}
-
-.modal-quote small {
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
-  font-style: italic;
-  font-weight: 700;
-  color: #cfcfcf;
-}
-
-.modal-tagline {
-  margin: 0 0 14px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-}
-
-.modal-bio {
-  margin: 0 0 20px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.modal-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-
-.modal .ticket-btn { background: var(--pink); color: var(--black); }
-.modal .ticket-btn:hover { background: var(--black); color: var(--white); }
-
-.modal .ticket-btn.alt { background: var(--black); color: var(--white); }
-.modal .ticket-btn.alt:hover { background: var(--white); color: var(--black); }
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1000px) {
-  .comics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .count-sticker { width: 150px; height: 150px; }
-  .count-sticker b { font-size: 52px; }
-  .count-sticker span { font-size: 11px; }
-}
-
-@media (max-width: 800px) {
-  .page-wrap { width: 94%; padding-top: 40px; }
-  h1 { letter-spacing: -3px; }
-  .count-sticker { display: none; }
-  .comics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 20px; }
-  .modal { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
-  .modal-photo { max-width: 340px; margin: 0 auto; }
-  .book-strip { padding: 24px; }
-  .more-note { padding: 22px 18px; }
-}
-
-@media (max-width: 520px) {
-  .page-wrap { padding-top: 30px; }
-  .kicker { font-size: 10px; }
-  h1 { font-size: 58px; }
-  .header-tag { font-size: 10px; }
-  .comics-grid { gap: 28px 16px; }
-  .comic-card { box-shadow: 6px 6px 0 var(--sh, var(--pink)); border-width: 3px; }
-  .comic-body { padding: 10px 10px 12px; border-top-width: 3px; }
-  .comic-arrow { display: none; }
-  .comic-quote { font-size: 12px; padding-top: 18px; }
-  .comic-quote::before { font-size: 44px; top: -8px; }
-  .square-1 { width: 30px; height: 30px; }
-  .square-3 { width: 40px; height: 40px; }
-}
-
-@media (max-width: 360px) {
-  .comics-grid { grid-template-columns: 1fr; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .comic-card, .comic-arrow { transition: none; }
-}
-
-/* =========================
-   SOCIAL CTA SECTION (same as homepage)
-========================= */
-
-.gcc-cta-wrapper { width: 100%; background: var(--black); }
-
-.cta-section {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 60px 5%;
-  background: var(--black);
-  overflow: hidden;
-}
-
-.cta-grid {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 45px;
-  align-items: stretch;
-}
-
-.cta-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
-
-.cta-icon {
-  width: 120px;
-  height: 120px;
-  flex: 0 0 120px;
-  border: 7px solid #000;
-  transform: rotate(-5deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cta-icon-ig { background: var(--pink); box-shadow: 12px 12px 0 var(--teal); }
-.cta-icon-wa { background: var(--lime); box-shadow: 12px 12px 0 var(--violet); }
-.cta-icon-wa svg { width: 74px; height: 74px; display: block; }
-
-.instagram-camera { width: 76px; height: 76px; border: 7px solid #000; border-radius: 25px; position: relative; }
-.instagram-lens { width: 34px; height: 34px; border: 7px solid #000; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.instagram-dot { width: 10px; height: 10px; background: #000; border-radius: 50%; position: absolute; top: 11px; right: 11px; }
-
-.cta-kicker { font-family: Arial, sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 3px; color: var(--teal); margin-bottom: 10px; }
-.cta-card-wa .cta-kicker { color: var(--lime); }
-
-.cta-title {
-  margin: 0;
-  font-family: Arial Black, Arial, sans-serif;
-  font-weight: 900;
-  font-size: clamp(32px, 4.2vw, 56px);
-  line-height: 0.88;
-  letter-spacing: -2px;
-  text-transform: uppercase;
-}
-
-.cta-card-ig .cta-title { color: var(--pink); text-shadow: 3px 3px 0 var(--teal); }
-.cta-card-wa .cta-title { color: var(--lime); text-shadow: 3px 3px 0 var(--violet); }
-
-.cta-handle { margin-top: 16px; font-family: Arial, sans-serif; font-weight: 800; font-size: 18px; color: var(--white); }
-
-.cta-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 25px;
-  color: #000;
-  border: 5px solid #000;
-  font-family: Arial Black, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  text-decoration: none;
-  transition: 0.15s;
-}
-
-.cta-button-ig { background: var(--yellow); box-shadow: 8px 8px 0 var(--pink); }
-.cta-button-ig:hover { transform: translate(3px, 3px); box-shadow: 5px 5px 0 var(--pink); }
-.cta-button-wa { background: var(--teal); box-shadow: 8px 8px 0 var(--violet); }
-.cta-button-wa:hover { transform: translate(3px, 3px); box-shadow: 5px 5px 0 var(--violet); }
-
-.ig-shape { position: absolute; width: 35px; height: 35px; border: 5px solid #000; z-index: 1; }
-.ig-pink { background: var(--pink); right: 6%; top: 12%; transform: rotate(17deg); }
-.ig-yellow { background: var(--yellow); right: 12%; bottom: 10%; transform: rotate(-12deg); }
-.ig-teal { background: var(--teal); left: 5%; bottom: 15%; transform: rotate(20deg); }
-
-@media (max-width: 800px) {
-  .cta-grid { grid-template-columns: 1fr; gap: 60px; }
-  .cta-section { padding: 50px 7%; }
-}
-
-@media (max-width: 520px) {
-  .cta-icon { width: 100px; height: 100px; flex: 0 0 100px; border-width: 6px; box-shadow: 9px 9px 0 var(--teal); }
-  .cta-icon-wa { box-shadow: 9px 9px 0 var(--violet); }
-  .cta-icon-wa svg { width: 60px; height: 60px; }
-  .instagram-camera { width: 62px; height: 62px; border-width: 6px; }
-  .instagram-lens { width: 28px; height: 28px; border-width: 6px; }
-  .instagram-dot { width: 8px; height: 8px; top: 9px; right: 9px; }
-  .cta-kicker { font-size: 11px; letter-spacing: 2px; }
-  .cta-title { font-size: 38px; letter-spacing: -1px; }
-  .cta-handle { font-size: 16px; }
-  .cta-button { font-size: 14px; padding: 12px 20px; }
-}
-
-/* =========================
-   SITE NAVIGATION (5 links)
-========================= */
-
-.site-nav{
-  position:relative;
-  z-index:1000;
-  width:100%;
-  min-height:78px;
-  padding:10px 4%;
-  background:#050505;
-  display:flex;
-  align-items:center;
-  gap:34px;
-  font-family:Arial Black,Impact,Arial,sans-serif;
-  border-bottom:2px solid #b14aed;
-}
-
-.site-nav-brand{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 88px;
-  height:58px;
-  color:#fff;
-  text-decoration:none;
-  transform:rotate(-2deg);
-  transition:transform .18s ease;
-}
-
-.site-nav-brand:hover{ transform:rotate(1deg) scale(1.07); }
-
-.site-nav-brand img{ width:84px; height:56px; object-fit:contain; display:block; }
-
-.site-nav-brand span{
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0,0,0,0);
-  white-space:nowrap;
-  border:0;
-}
-
-.site-nav-links{
-  margin-left:auto;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:28px;
-}
-
-.site-nav-links a{
-  position:relative;
-  display:inline-block;
-  color:#fff;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:900;
-  line-height:1.1;
-  text-transform:uppercase;
-  letter-spacing:.2px;
-  white-space:nowrap;
-  padding:13px 0 11px;
-  transition:color .16s ease, transform .16s ease;
-}
-
-.site-nav-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:4px;
-  width:29px;
-  height:4px;
-  transform:rotate(-2deg);
-  transform-origin:left center;
-  transition:width .18s ease, transform .18s ease;
-}
+:root{--black:#050505;--pink:#ff2f9f;--teal:#00f5d4;--yellow:#ffe600;--orange:#ff6b1a;--violet:#b14aed;--lime:#c6ff00;--white:#fff;--grey:#161616}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--black);color:var(--white);font-family:Arial Black,Impact,Arial,sans-serif}
+body{overflow-x:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.page-wrap{width:min(1150px,92%);margin:0 auto;padding:60px 0 40px}
+
+/* HERO: quiet, one idea */
+.header{margin-bottom:70px;max-width:760px}
+.kicker{color:var(--teal);font-size:14px;letter-spacing:3px;margin-bottom:10px}
+h1{margin:0;color:var(--pink);font-size:clamp(48px,8vw,96px);line-height:.85;letter-spacing:-4px;text-transform:uppercase;text-shadow:3px 3px 0 var(--teal)}
+.intro{margin:26px 0 0;font-family:Arial,sans-serif;font-size:clamp(16px,2vw,19px);font-weight:700;line-height:1.55;color:#e9e9e9}
+.intro strong{color:var(--yellow);font-weight:900}
+
+/* BUTTONS */
+.btn{display:inline-block;background:var(--black);color:var(--white);text-decoration:none;padding:14px 20px;border:3px solid var(--black);font-size:12px;letter-spacing:1px;transition:.15s;white-space:nowrap}
+.btn:hover{background:var(--white);color:var(--black)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.hero-actions .btn{background:var(--pink);color:var(--black);box-shadow:6px 6px 0 var(--teal)}
+.hero-actions .btn.alt{background:var(--yellow);box-shadow:6px 6px 0 var(--pink)}
+.hero-actions .btn:hover{background:var(--white);transform:translate(2px,2px);box-shadow:4px 4px 0 var(--teal)}
+
+/* TIER SECTIONS */
+.tier{margin-bottom:80px}
+.tier[hidden]{display:none}
+.tier-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 30px;padding-bottom:12px;border-bottom:4px solid var(--rule)}
+.tier-head h2{margin:0;color:var(--rule);font-size:var(--hsize);line-height:1;letter-spacing:-2px;text-transform:uppercase}
+.tier-head p{margin:0;font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#bdbdbd}
+#sec1{--rule:var(--pink);--hsize:clamp(32px,5.5vw,56px)}
+#sec2{--rule:var(--teal);--hsize:clamp(24px,4vw,38px)}
+#sec3{--rule:#8a8a8a;--hsize:clamp(18px,3vw,26px)}
+
+.grid{list-style:none;margin:0;padding:0;display:grid}
+.grid li{display:flex}
+.g1{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 40px}
+.g2{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 26px}
+.g3{grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 14px}
+
+/* CARDS */
+.card{display:flex;flex-direction:column;width:100%;padding:0;margin:0;background:var(--black);color:var(--white);border:4px solid var(--black);font-family:inherit;text-align:left;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.card:hover,.card:focus-visible{transform:translate(-3px,-4px);outline:none}
+.card:focus-visible{outline:3px solid var(--white);outline-offset:4px}
+.photo{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--grey)}
+.body{display:flex;flex-direction:column;gap:12px;padding:16px;border-top:4px solid var(--sh)}
+.name{color:var(--sh);line-height:1;text-transform:uppercase;letter-spacing:-.5px}
+.quote{display:block;font-family:Arial,sans-serif;font-weight:700;line-height:1.4}
+.quote small{display:block;margin-top:6px;font-size:12px;font-style:italic;font-weight:700;color:#b8b8b8}
+.more{margin-top:auto;font-family:Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:1px;color:var(--sh)}
+
+/* Tier 1: headliners, biggest, one pink shadow */
+.t1{--sh:var(--pink);box-shadow:12px 12px 0 var(--sh)}
+.t1:hover,.t1:focus-visible{box-shadow:17px 17px 0 var(--sh)}
+.t1 .body{padding:22px;gap:14px}
+.t1 .name{font-size:clamp(26px,3.6vw,40px)}
+.t1 .quote{font-size:clamp(17px,2vw,21px)}
+
+/* Tier 2: regulars, medium, teal shadow */
+.t2{--sh:var(--teal);box-shadow:8px 8px 0 var(--sh)}
+.t2:hover,.t2:focus-visible{box-shadow:12px 12px 0 var(--sh)}
+.t2 .name{font-size:clamp(17px,2.2vw,22px)}
+.t2 .quote{font-size:14px}
+
+/* Tier 3: the rest, small and flat, no shadow, no joke */
+.t3{--sh:var(--white);border:3px solid #2a2a2a}
+.t3:hover,.t3:focus-visible{border-color:var(--teal)}
+.t3 .body{padding:9px 10px 11px;border-top:3px solid #2a2a2a}
+.t3 .name{font-size:12px;letter-spacing:0}
+
+.more-note{margin:0;padding:26px 28px;border:4px dashed var(--teal);text-align:center}
+.more-note h3{margin:0 0 8px;color:var(--teal);font-size:clamp(22px,3.4vw,34px);line-height:1;letter-spacing:-1px;text-transform:uppercase}
+.more-note p{margin:0 auto;max-width:620px;font-family:Arial,sans-serif;font-size:15px;font-weight:700;line-height:1.5;color:#dcdcdc}
+
+.book-strip{margin:60px 0 20px;padding:30px 32px;background:var(--yellow);color:var(--black);border:5px solid var(--black);box-shadow:12px 12px 0 var(--pink);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.book-strip h2{margin:0;font-size:clamp(26px,4.4vw,46px);line-height:.92;letter-spacing:-2px;text-transform:uppercase}
+.book-strip p{margin:10px 0 0;font-family:Arial,sans-serif;font-size:15px;font-weight:900}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+.modal{position:relative;width:min(780px,100%);max-height:calc(100vh - 40px);overflow-y:auto;background:var(--yellow);color:var(--black);border:5px solid var(--black);padding:30px;box-shadow:12px 12px 0 var(--pink);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:center}
+.close{position:absolute;right:12px;top:12px;z-index:2;width:40px;height:40px;background:var(--teal);color:var(--black);border:3px solid var(--black);font-size:22px;font-weight:900;cursor:pointer}
+.modal-photo{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border:4px solid var(--black);box-shadow:8px 8px 0 var(--black);display:block}
+.modal-kicker{font-family:Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;margin-bottom:10px}
+.modal h2{margin:0 40px 16px 0;font-size:clamp(32px,6vw,54px);line-height:.88;letter-spacing:-2px;text-transform:uppercase}
+.modal-quote{margin:0 0 16px;padding:14px 16px;background:var(--black);color:var(--white);border-left:8px solid var(--pink);font-family:Arial,sans-serif;font-size:17px;font-weight:900;line-height:1.35}
+.modal-quote small{display:block;margin-top:6px;font-size:13px;font-style:italic;font-weight:700;color:#cfcfcf}
+.modal-tagline{margin:0 0 14px;font-family:Arial,sans-serif;font-size:16px;font-weight:900}
+.modal-bio{margin:0 0 20px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;line-height:1.5}
+.modal-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.modal .btn{background:var(--pink);color:var(--black)}
+.modal .btn:hover{background:var(--black);color:var(--white)}
+.modal .btn.alt{background:var(--black);color:var(--white)}
+.modal .btn.alt:hover{background:var(--white);color:var(--black)}
+
+/* RESPONSIVE */
+@media(max-width:1000px){.g3{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:800px){
+  .page-wrap{width:94%;padding-top:40px}
+  h1{letter-spacing:-2px}
+  .g1{grid-template-columns:1fr}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .modal{grid-template-columns:1fr;padding:24px;gap:20px}
+  .modal-photo{max-width:340px;margin:0 auto}
+  .book-strip{padding:24px}
+  .more-note{padding:22px 18px}
+}
+@media(max-width:520px){
+  .kicker{font-size:10px}
+  h1{font-size:50px}
+  .g2{gap:26px 16px}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .t1{box-shadow:8px 8px 0 var(--sh)}
+  .t2{box-shadow:6px 6px 0 var(--sh)}
+  .card{border-width:3px}
+  .t2 .quote{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
+
+/* SOCIAL CTA (same as homepage) */
+.gcc-cta-wrapper{width:100%;background:var(--black)}
+.cta-section{position:relative;width:100%;margin:0;padding:60px 5%;background:var(--black);overflow:hidden}
+.cta-grid{position:relative;z-index:3;width:100%;max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:45px;align-items:stretch}
+.cta-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}
+.cta-icon{width:120px;height:120px;flex:0 0 120px;border:7px solid #000;transform:rotate(-5deg);display:flex;align-items:center;justify-content:center}
+.cta-icon-ig{background:var(--pink);box-shadow:12px 12px 0 var(--teal)}
+.cta-icon-wa{background:var(--lime);box-shadow:12px 12px 0 var(--violet)}
+.cta-icon-wa svg{width:74px;height:74px;display:block}
+.instagram-camera{width:76px;height:76px;border:7px solid #000;border-radius:25px;position:relative}
+.instagram-lens{width:34px;height:34px;border:7px solid #000;border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.instagram-dot{width:10px;height:10px;background:#000;border-radius:50%;position:absolute;top:11px;right:11px}
+.cta-kicker{font-family:Arial,sans-serif;font-weight:900;font-size:14px;letter-spacing:3px;color:var(--teal);margin-bottom:10px}
+.cta-card-wa .cta-kicker{color:var(--lime)}
+.cta-title{margin:0;font-family:Arial Black,Arial,sans-serif;font-weight:900;font-size:clamp(32px,4.2vw,56px);line-height:.88;letter-spacing:-2px;text-transform:uppercase}
+.cta-card-ig .cta-title{color:var(--pink);text-shadow:3px 3px 0 var(--teal)}
+.cta-card-wa .cta-title{color:var(--lime);text-shadow:3px 3px 0 var(--violet)}
+.cta-handle{margin-top:16px;font-family:Arial,sans-serif;font-weight:800;font-size:18px;color:var(--white)}
+.cta-button{display:inline-block;margin-top:20px;padding:14px 25px;color:#000;border:5px solid #000;font-family:Arial Black,Arial,sans-serif;font-size:16px;font-weight:900;text-decoration:none;transition:.15s}
+.cta-button-ig{background:var(--yellow);box-shadow:8px 8px 0 var(--pink)}
+.cta-button-ig:hover{transform:translate(3px,3px);box-shadow:5px 5px 0 var(--pink)}
+.cta-button-wa{background:var(--teal);box-shadow:8px 8px 0 var(--violet)}
+.cta-button-wa:hover{transform:translate(3px,3px);box-shadow:5px 5px 0 var(--violet)}
+.ig-shape{position:absolute;width:35px;height:35px;border:5px solid #000;z-index:1}
+.ig-pink{background:var(--pink);right:6%;top:12%;transform:rotate(17deg)}
+.ig-yellow{background:var(--yellow);right:12%;bottom:10%;transform:rotate(-12deg)}
+.ig-teal{background:var(--teal);left:5%;bottom:15%;transform:rotate(20deg)}
+@media(max-width:800px){.cta-grid{grid-template-columns:1fr;gap:60px}.cta-section{padding:50px 7%}}
+@media(max-width:520px){
+  .cta-icon{width:100px;height:100px;flex:0 0 100px;border-width:6px;box-shadow:9px 9px 0 var(--teal)}
+  .cta-icon-wa{box-shadow:9px 9px 0 var(--violet)}
+  .cta-icon-wa svg{width:60px;height:60px}
+  .instagram-camera{width:62px;height:62px;border-width:6px}
+  .instagram-lens{width:28px;height:28px;border-width:6px}
+  .instagram-dot{width:8px;height:8px;top:9px;right:9px}
+  .cta-kicker{font-size:11px;letter-spacing:2px}
+  .cta-title{font-size:38px;letter-spacing:-1px}
+  .cta-handle{font-size:16px}
+  .cta-button{font-size:14px;padding:12px 20px}
+}
+
+/* SITE NAVIGATION */
+.site-nav{position:relative;z-index:1000;width:100%;min-height:78px;padding:10px 4%;background:#050505;display:flex;align-items:center;gap:34px;font-family:Arial Black,Impact,Arial,sans-serif;border-bottom:2px solid #b14aed}
+.site-nav-brand{position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 88px;height:58px;color:#fff;text-decoration:none;transform:rotate(-2deg);transition:transform .18s ease}
+.site-nav-brand:hover{transform:rotate(1deg) scale(1.07)}
+.site-nav-brand img{width:84px;height:56px;object-fit:contain;display:block}
+.site-nav-brand span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.site-nav-links{margin-left:auto;display:flex;align-items:center;justify-content:flex-end;gap:28px}
+.site-nav-links a{position:relative;display:inline-block;color:#fff;text-decoration:none;font-size:12px;font-weight:900;line-height:1.1;text-transform:uppercase;letter-spacing:.2px;white-space:nowrap;padding:13px 0 11px;transition:color .16s ease,transform .16s ease}
+.site-nav-links a::after{content:"";position:absolute;left:0;bottom:4px;width:29px;height:4px;transform:rotate(-2deg);transform-origin:left center;transition:width .18s ease,transform .18s ease}
 .site-nav-links a:nth-child(1)::after{background:#ffe600}
 .site-nav-links a:nth-child(2)::after{background:#00f5d4}
 .site-nav-links a:nth-child(3)::after{background:#ff2f9f}
 .site-nav-links a:nth-child(4)::after{background:#c6ff00}
 .site-nav-links a:nth-child(5)::after{background:#ff6b1a}
-
-.site-nav-links a:hover,
-.site-nav-links a:focus-visible,
-.site-nav-links a[aria-current="page"]{
-  color:#00f5d4;
-  transform:translateY(-2px);
-}
-
-.site-nav-links a:hover::after,
-.site-nav-links a:focus-visible::after,
-.site-nav-links a[aria-current="page"]::after{
-  width:100%;
-  transform:rotate(1deg);
-}
-
-.site-nav-toggle{
-  display:none;
-  margin-left:auto;
-  width:46px;
-  height:42px;
-  padding:7px 8px;
-  border:2px solid #00f5d4;
-  background:#050505;
-  box-shadow:4px 4px 0 #ff2f9f;
-  color:#fff;
-  cursor:pointer;
-  transform:rotate(-2deg);
-}
-
-.site-nav-toggle span{ display:block; height:3px; margin:5px 0; background:currentColor; }
-
+.site-nav-links a:hover,.site-nav-links a:focus-visible,.site-nav-links a[aria-current="page"]{color:#00f5d4;transform:translateY(-2px)}
+.site-nav-links a:hover::after,.site-nav-links a:focus-visible::after,.site-nav-links a[aria-current="page"]::after{width:100%;transform:rotate(1deg)}
+.site-nav-toggle{display:none;margin-left:auto;width:46px;height:42px;padding:7px 8px;border:2px solid #00f5d4;background:#050505;box-shadow:4px 4px 0 #ff2f9f;color:#fff;cursor:pointer;transform:rotate(-2deg)}
+.site-nav-toggle span{display:block;height:3px;margin:5px 0;background:currentColor}
 @media(max-width:1200px){
-  .site-nav{ flex-wrap:wrap; padding:9px 5%; }
-  .site-nav-toggle{ display:block; }
-  .site-nav-links{
-    display:none;
-    width:100%;
-    margin:5px 0 7px;
-    padding:5px 0;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:3px;
-  }
-  .site-nav.site-nav-open .site-nav-links{ display:flex; }
-  .site-nav-links a{ font-size:13px; padding:11px 0; white-space:normal; }
+  .site-nav{flex-wrap:wrap;padding:9px 5%}
+  .site-nav-toggle{display:block}
+  .site-nav-links{display:none;width:100%;margin:5px 0 7px;padding:5px 0;flex-direction:column;align-items:flex-start;gap:3px}
+  .site-nav.site-nav-open .site-nav-links{display:flex}
+  .site-nav-links a{font-size:13px;padding:11px 0;white-space:normal}
 }
-
 @media(max-width:520px){
-  .site-nav{ min-height:66px; padding:8px 4%; }
-  .site-nav-brand{ flex-basis:72px; height:48px; }
-  .site-nav-brand img{ width:70px; height:46px; }
+  .site-nav{min-height:66px;padding:8px 4%}
+  .site-nav-brand{flex-basis:72px;height:48px}
+  .site-nav-brand img{width:70px;height:46px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- SITE NAVIGATION -->
 <nav class="site-nav" id="siteNav" aria-label="Main navigation">
   <a class="site-nav-brand" href="/">
     <img src="logo.gif" alt="">
@@ -879,113 +235,94 @@ h1 {
   </div>
 </nav>
 
-<!-- FLOATING DESIGN ELEMENTS -->
-<div class="shape square-1"></div>
-<div class="shape square-2"></div>
-<div class="shape square-3"></div>
-<div class="shape square-4"></div>
-<div class="shape square-5"></div>
-<div class="shape square-6"></div>
-
 <main class="page-wrap">
 
   <header class="header">
-
     <div class="kicker">GOAN COMEDY CARTEL</div>
-
     <h1>MEET<br>THE COMICS</h1>
-
-    <div class="header-tag">30+ COMICS. THESE ARE OUR BEST ↓</div>
-
     <p class="intro">
-      The Cartel is <strong>30+ stand-up comics strong</strong>, and these are
-      the ones we'd hand any mic to, any night, anywhere in Goa. Read their
-      one-liners, tap a face to know more, then catch them live or
-      book one for your event.
+      The Cartel is <strong>30+ stand-up comics strong</strong>. Start with our
+      headliners, then work your way down to the rest of the bill.
     </p>
-
     <div class="hero-actions">
-      <a class="ticket-btn" href="/">SEE UPCOMING SHOWS →</a>
-      <a class="ticket-btn alt" href="/book-a-comic.html">BOOK A COMIC →</a>
+      <a class="btn" href="/">See upcoming shows</a>
+      <a class="btn alt" href="/book-a-comic.html">Book a comic</a>
     </div>
-
-    <div class="count-sticker" aria-hidden="true">
-      <b>30+</b>
-      <span>comics<br>in the cartel</span>
-    </div>
-
     <p class="sr-only">
       Meet the stand-up comedians of the Goan Comedy Cartel, a collective of
       more than 30 Goa comics performing at comedy shows, open mics and
-      comedy nights across Goa. These are the best of them. Tap a comic to
-      learn more or book them for your event.
+      comedy nights across Goa. Tap a comic to learn more or book them for your event.
     </p>
-
   </header>
 
-  <div class="section-heading">
-    <h2>The Best Of The Cartel</h2>
-    <span></span>
-  </div>
-  <p class="section-note">Each comic's one-liner is right under their face</p>
+  <section class="tier" id="sec1" aria-labelledby="h1-headliners">
+    <div class="tier-head">
+      <h2 id="h1-headliners">Headliners</h2>
+      <p>Our strongest sets. Start here.</p>
+    </div>
+    <ul class="grid g1" id="tier1"></ul>
+  </section>
 
-  <ul class="comics-grid" id="comicsGrid"></ul>
+  <section class="tier" id="sec2" aria-labelledby="h2-regulars">
+    <div class="tier-head">
+      <h2 id="h2-regulars">Regulars</h2>
+      <p>On the bill most weeks.</p>
+    </div>
+    <ul class="grid g2" id="tier2"></ul>
+  </section>
+
+  <section class="tier" id="sec3" aria-labelledby="h3-rest">
+    <div class="tier-head">
+      <h2 id="h3-rest">The rest of the Cartel</h2>
+      <p>Tap a face to know more.</p>
+    </div>
+    <ul class="grid g3" id="tier3"></ul>
+  </section>
 
   <div class="more-note">
     <h3>Plenty more where these came from</h3>
     <p>
-      That's just the best of the 30+. Follow us on Instagram to meet the rest,
-      or tell us what your event needs and we'll match you with the right comic.
+      Follow us on Instagram to meet the rest, or tell us what your event
+      needs and we'll match you with the right comic.
     </p>
   </div>
 
   <aside class="book-strip">
     <div>
-      <h2>WANT ONE OF THEM<br>AT YOUR EVENT?</h2>
+      <h2>Want one of them<br>at your event?</h2>
       <p>Weddings, parties, corporate nights, cafés. We'll sort it.</p>
     </div>
-    <a class="ticket-btn" href="/book-a-comic.html">BOOK A COMIC →</a>
+    <a class="btn" href="/book-a-comic.html">Book a comic</a>
   </aside>
 
 </main>
 
-
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
-
     <button class="close" id="modalClose" aria-label="Close">×</button>
-
     <img class="modal-photo" id="modalPhoto" src="" alt="">
-
     <div>
       <div class="modal-kicker">GOAN COMEDY CARTEL</div>
       <h2 id="modalName"></h2>
       <p class="modal-quote" id="modalQuote"></p>
       <p class="modal-tagline" id="modalTagline"></p>
       <p class="modal-bio" id="modalBio"></p>
-
       <div class="modal-actions">
-        <a class="ticket-btn" id="modalBook" href="/book-a-comic.html">BOOK THIS COMIC →</a>
-        <a class="ticket-btn alt" id="modalInsta" href="#" target="_blank" rel="noopener noreferrer">INSTAGRAM →</a>
+        <a class="btn" id="modalBook" href="/book-a-comic.html">Book this comic</a>
+        <a class="btn alt" id="modalInsta" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
-
   </div>
 </div>
 
-
-<!-- SOCIAL CTA — same block as the homepage -->
+<!-- SOCIAL CTA -->
 <div class="gcc-cta-wrapper">
   <section class="cta-section">
     <div class="cta-grid">
-
       <div class="cta-card cta-card-ig">
         <div class="cta-icon cta-icon-ig">
-          <div class="instagram-camera">
-            <div class="instagram-lens"></div>
-            <div class="instagram-dot"></div>
-          </div>
+          <div class="instagram-camera"><div class="instagram-lens"></div><div class="instagram-dot"></div></div>
         </div>
         <div class="cta-copy">
           <div class="cta-kicker">MORE CHAOS ONLINE</div>
@@ -994,7 +331,6 @@ h1 {
           <a class="cta-button cta-button-ig" href="https://www.instagram.com/goancomedycartel/" target="_blank" rel="noopener noreferrer">FOLLOW US →</a>
         </div>
       </div>
-
       <div class="cta-card cta-card-wa">
         <div class="cta-icon cta-icon-wa">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1008,131 +344,64 @@ h1 {
           <a class="cta-button cta-button-wa" href="https://chat.whatsapp.com/FiIIjuxzlEy50DzeE1SaVx" target="_blank" rel="noopener noreferrer">JOIN NOW →</a>
         </div>
       </div>
-
     </div>
-
     <div class="ig-shape ig-pink"></div>
     <div class="ig-shape ig-yellow"></div>
     <div class="ig-shape ig-teal"></div>
   </section>
 </div>
 
-
 <script>
-
 /* ==========================================
    COMICS
 
+   RANKING: the `tier` number decides where a comic appears.
+     tier: 1  = Headliners (biggest cards, full one-liner)
+     tier: 2  = Regulars   (medium cards, one-liner)
+     tier: 3  = The rest   (small tiles, name only)
+   Within a tier, comics show in the order listed here.
+   To promote or demote someone, change their tier number.
    To add a comic: drop their photo in /gcc-comics-page/comics/
-   and paste one more line in this array. The grid, popup and
-   Google (Person) data all build from this list.
+   and paste one more block.
 
-   - name:      shown on the card and in the popup
-   - photo:     file name inside /gcc-comics-page/comics/
-   - shadow:    offset-shadow colour for their card
-                (pink, teal, yellow, lime, orange, violet)
-
-   - oneliner:  THEIR ONE-LINER. Type it between the quotes
-                WITHOUT quotation marks (the page adds them).
-                Leave "" and the card shows the placeholder
-                text set in ONELINER_PLACEHOLDER below.
-   - signoff:   optional little tag after the joke, e.g.
-                "circa 2026 BC". Leave "" for none.
-
-   - tagline / bio / instagram: optional extras for the popup.
-                Leave "" and that line simply doesn't show.
-                instagram is the full profile URL.
+   - oneliner: type WITHOUT quotation marks. Leave "" to show none.
+   - signoff:  optional tag after the joke. Leave "" for none.
+   - tagline / bio / instagram: optional popup extras.
 ========================================== */
 
 const comics = [
 
-  {
-    name: "Navin Noronha",
-    photo: "navin-noronha.jpg",
-    shadow: "pink",
+  { name: "Navin Noronha", photo: "navin-noronha.jpg", tier: 1,
     oneliner: "I laugh at the mundane in life, and the mundane laughs right back at me",
-    signoff: "",
-    tagline: "", bio: "", instagram: ""
-  },
+    signoff: "", tagline: "", bio: "", instagram: "" },
 
-  {
-    name: "Sarah Sheikh",
-    photo: "sarah-sheikh.jpg",
-    shadow: "teal",
-    oneliner: "",   // ← paste Sarah's one-liner here
-    signoff: "",
-    tagline: "", bio: "", instagram: ""
-  },
-
-  {
-    name: "Sumedh Natu",
-    photo: "sumedh-natu.jpg",
-    shadow: "yellow",
-    oneliner: "",   // ← paste Sumedh's one-liner here
-    signoff: "",
-    tagline: "", bio: "", instagram: ""
-  },
-
-  {
-    name: "Aditiya Iyer",
-    photo: "aditiya-iyer.jpg",
-    shadow: "lime",
+  { name: "Aditiya Iyer", photo: "aditiya-iyer.jpg", tier: 1,
     oneliner: "All this standup is really bad for my knees",
-    signoff: "circa 2026 BC",
-    tagline: "", bio: "", instagram: ""
-  },
+    signoff: "circa 2026 BC", tagline: "", bio: "", instagram: "" },
 
-  {
-    name: "Daniel Fernandes",
-    photo: "daniel-fernandes.jpg",
-    shadow: "orange",
-    oneliner: "",   // ← paste Daniel's one-liner here
-    signoff: "",
-    tagline: "", bio: "", instagram: ""
-  },
+  { name: "Sarah Sheikh", photo: "sarah-sheikh.jpg", tier: 2,
+    oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  {
-    name: "Sonali Kathuria",
-    photo: "sonali-kathuria.jpg",
-    shadow: "violet",
-    oneliner: "",   // ← paste Sonali's one-liner here
-    signoff: "",
-    tagline: "", bio: "", instagram: ""
-  },
+  { name: "Sumedh Natu", photo: "sumedh-natu.jpg", tier: 2,
+    oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  {
-    name: "Dale Godinho",
-    photo: "dale-godinho.jpg",
-    shadow: "teal",
-    oneliner: "",   // ← paste Dale's one-liner here
-    signoff: "",
-    tagline: "", bio: "", instagram: ""
-  },
+  { name: "Daniel Fernandes", photo: "daniel-fernandes.jpg", tier: 2,
+    oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
 
-  {
-    name: "Sunali Panda",
-    photo: "sunali-panda.jpg",
-    shadow: "yellow",
-    oneliner: "",   // ← paste Sunali's one-liner here
-    signoff: "",
-    tagline: "", bio: "", instagram: ""
-  }
+  { name: "Sonali Kathuria", photo: "sonali-kathuria.jpg", tier: 3,
+    oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
+
+  { name: "Dale Godinho", photo: "dale-godinho.jpg", tier: 3,
+    oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" },
+
+  { name: "Sunali Panda", photo: "sunali-panda.jpg", tier: 3,
+    oneliner: "", signoff: "", tagline: "", bio: "", instagram: "" }
 
 ];
-
-/* Shown on a card until that comic's one-liner is filled in.
-   Set to "" if you'd rather show nothing at all. */
-const ONELINER_PLACEHOLDER = "Still workshopping a one-liner…";
 
 const PHOTO_PATH = "gcc-comics-page/comics/";
 const SITE = "https://goancomedycartel.com/";
 
-
-/* ==========================================
-   ELEMENTS
-========================================== */
-
-const grid = document.getElementById("comicsGrid");
 const modalOverlay = document.getElementById("modalOverlay");
 const modalClose = document.getElementById("modalClose");
 const modalPhoto = document.getElementById("modalPhoto");
@@ -1142,113 +411,76 @@ const modalTagline = document.getElementById("modalTagline");
 const modalBio = document.getElementById("modalBio");
 const modalBook = document.getElementById("modalBook");
 const modalInsta = document.getElementById("modalInsta");
-
 let lastFocused = null;
-
-
-/* ==========================================
-   HELPERS
-========================================== */
 
 function slugify(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
+function makeCard(comic, tier, eager) {
+  const li = document.createElement("li");
+  const card = document.createElement("button");
+  card.type = "button";
+  card.className = "card t" + tier;
+  card.setAttribute("aria-label", comic.name + " — open profile");
 
-/* ==========================================
-   RENDER GRID
-========================================== */
+  const img = document.createElement("img");
+  img.className = "photo";
+  img.src = PHOTO_PATH + comic.photo;
+  img.alt = comic.name + ", Goa stand-up comedian";
+  img.loading = eager ? "eager" : "lazy";
+  img.width = 800;
+  img.height = 800;
 
-function renderComics() {
+  const body = document.createElement("span");
+  body.className = "body";
 
-  grid.innerHTML = "";
+  const name = document.createElement("span");
+  name.className = "name";
+  name.textContent = comic.name;
+  body.appendChild(name);
 
-  comics.forEach(function(comic, index) {
-
-    const li = document.createElement("li");
-
-    const card = document.createElement("button");
-    card.type = "button";
-    card.className = "comic-card";
-    card.style.setProperty("--sh", "var(--" + comic.shadow + ")");
-    card.setAttribute("aria-label", comic.name + " — open profile");
-
-    const img = document.createElement("img");
-    img.className = "comic-photo";
-    img.src = PHOTO_PATH + comic.photo;
-    img.alt = comic.name + ", Goa stand-up comedian";
-    img.loading = index < 4 ? "eager" : "lazy";
-    img.width = 800;
-    img.height = 800;
-
-    const body = document.createElement("span");
-    body.className = "comic-body";
-
-    const nameRow = document.createElement("span");
-    nameRow.className = "comic-name-row";
-
-    const name = document.createElement("span");
-    name.className = "comic-name";
-    name.textContent = comic.name;
-
-    const arrow = document.createElement("span");
-    arrow.className = "comic-arrow";
-    arrow.textContent = "→";
-    arrow.setAttribute("aria-hidden", "true");
-
-    nameRow.appendChild(name);
-    nameRow.appendChild(arrow);
-
+  /* one-liners only on tiers 1 and 2, and only if written */
+  if (tier < 3 && comic.oneliner) {
     const quote = document.createElement("span");
-    quote.className = "comic-quote";
-
-    if (comic.oneliner) {
-
-      quote.textContent = comic.oneliner;
-
-      if (comic.signoff) {
-        const sign = document.createElement("span");
-        sign.className = "comic-signoff";
-        sign.textContent = "— " + comic.signoff;
-        quote.appendChild(sign);
-      }
-
-    } else if (ONELINER_PLACEHOLDER) {
-
-      quote.textContent = ONELINER_PLACEHOLDER;
-      quote.classList.add("is-empty");
-
-    } else {
-
-      quote.style.display = "none";
-
+    quote.className = "quote";
+    quote.textContent = "“" + comic.oneliner + "”";
+    if (comic.signoff) {
+      const sign = document.createElement("small");
+      sign.textContent = "— " + comic.signoff;
+      quote.appendChild(sign);
     }
-
-    body.appendChild(nameRow);
     body.appendChild(quote);
+  }
 
-    card.appendChild(img);
-    card.appendChild(body);
+  if (tier === 1) {
+    const more = document.createElement("span");
+    more.className = "more";
+    more.textContent = "More about " + comic.name.split(" ")[0] + " →";
+    body.appendChild(more);
+  }
 
-    card.addEventListener("click", function() { openComic(index, card); });
-
-    li.appendChild(card);
-    grid.appendChild(li);
-
-  });
-
+  card.appendChild(img);
+  card.appendChild(body);
+  card.addEventListener("click", function() { openComic(comic, card); });
+  li.appendChild(card);
+  return li;
 }
 
+function renderComics() {
+  [1, 2, 3].forEach(function(tier) {
+    const list = document.getElementById("tier" + tier);
+    const section = document.getElementById("sec" + tier);
+    const group = comics.filter(function(c) { return (c.tier || 3) === tier; });
+    list.innerHTML = "";
+    if (!group.length) { section.hidden = true; return; }
+    section.hidden = false;
+    group.forEach(function(c, i) { list.appendChild(makeCard(c, tier, tier === 1 || i < 3)); });
+  });
+}
 
-/* ==========================================
-   MODAL
-========================================== */
-
-function openComic(index, trigger) {
-
-  const comic = comics[index];
+function openComic(comic, trigger) {
   lastFocused = trigger || null;
-
   modalPhoto.src = PHOTO_PATH + comic.photo;
   modalPhoto.alt = comic.name + ", Goa stand-up comedian";
   modalName.textContent = comic.name;
@@ -1268,10 +500,8 @@ function openComic(index, trigger) {
 
   modalTagline.textContent = comic.tagline;
   modalTagline.style.display = comic.tagline ? "block" : "none";
-
   modalBio.textContent = comic.bio;
   modalBio.style.display = comic.bio ? "block" : "none";
-
   modalBook.href = "/book-a-comic.html?comic=" + slugify(comic.name);
 
   if (comic.instagram) {
@@ -1283,7 +513,6 @@ function openComic(index, trigger) {
 
   modalOverlay.classList.add("active");
   modalClose.focus();
-
 }
 
 function closeModal() {
@@ -1292,27 +521,12 @@ function closeModal() {
 }
 
 modalClose.addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", function(e) { if (e.target === modalOverlay) closeModal(); });
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeModal(); });
 
-modalOverlay.addEventListener("click", function(event) {
-  if (event.target === modalOverlay) closeModal();
-});
-
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") closeModal();
-});
-
-
-/* ==========================================
-   PERSON STRUCTURED DATA (JSON-LD)
-
-   One schema.org Person per comic, built from the same list,
-   so it never drifts out of sync.
-========================================== */
-
+/* schema.org Person per comic, built from the same list */
 function renderPersonSchema() {
-
   comics.forEach(function(comic) {
-
     const person = {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -1321,35 +535,20 @@ function renderPersonSchema() {
       "image": SITE + PHOTO_PATH + comic.photo,
       "url": SITE + "comics.html",
       "workLocation": { "@type": "Place", "name": "Goa, India" },
-      "memberOf": {
-        "@type": "Organization",
-        "name": "Goan Comedy Cartel",
-        "url": SITE
-      }
+      "memberOf": { "@type": "Organization", "name": "Goan Comedy Cartel", "url": SITE }
     };
-
     if (comic.bio) person.description = comic.bio;
     if (comic.instagram) person.sameAs = [comic.instagram];
-
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(person);
     document.head.appendChild(script);
-
   });
-
 }
-
-
-/* ==========================================
-   START
-========================================== */
 
 renderComics();
 renderPersonSchema();
-
 </script>
-
 
 <script>
 (function(){
