@@ -87,10 +87,10 @@
     position: relative;
   }
 
-  /* Poster items are plain divs by default; some (like the two
-     ticketed touring-comic entries below) are <a> tags instead
-     so the whole poster links out — this keeps that anchor
-     looking identical to the div-based ones. */
+  /* Poster items are plain divs by default; some (like the ticketed
+     touring-comic entries below) are <a> tags instead so the whole
+     poster links out — this keeps that anchor looking identical to
+     the div-based ones. */
   a.poster-item {
     display: block;
     text-decoration: none;
@@ -149,6 +149,11 @@
   .poster-item:nth-child(8) .poster-frame {
     box-shadow: 9px 9px 0 var(--pink);
     transform: rotate(-1deg);
+  }
+
+  .poster-item:nth-child(9) .poster-frame {
+    box-shadow: 9px 9px 0 var(--teal);
+    transform: rotate(1deg);
   }
 
   .poster-info {
@@ -603,9 +608,8 @@ html,body{margin:0;padding:0;background:#050505}
         </div>
       </a>
 
-    </div>
 
-    <!-- PUNIT PANIA -->
+      <!-- PUNIT PANIA -->
       <a class="poster-item"
          href="https://in.bookmyshow.com/events/no-country-for-moderation-punit-pania/ET00130545"
          target="_blank"
@@ -613,7 +617,7 @@ html,body{margin:0;padding:0;background:#050505}
         <div class="poster-frame">
           <img
             src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-punit-pania-live-in-goa-0-2026-10-22-t-16-26-53.jpg"
-            alt="Punit Pania Non-AI poster">
+            alt="Punit Pania Live in Goa poster">
         </div>
 
         <div class="poster-info">
@@ -621,8 +625,9 @@ html,body{margin:0;padding:0;background:#050505}
           <div class="poster-location">Live in Goa</div>
         </div>
       </a>
-      </div> 
-  
+
+    </div><!-- end poster-wall -->
+
   </section>
 
 
