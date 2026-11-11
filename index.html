@@ -413,6 +413,13 @@ h1 {
   box-shadow: 4px 4px 0 var(--yellow);
 }
 
+/* Per-show colour override: teal tile with pink shadow in the calendar grid */
+.event.event-teal:nth-child(n) {
+  background: var(--teal);
+  box-shadow: 4px 4px 0 var(--pink);
+  color: var(--black);
+}
+
 .event-title {
   font-size: 9px;
   line-height: 1.1;
@@ -502,6 +509,13 @@ h1 {
 .event-card:nth-child(6n) {
   background: var(--lime);
   box-shadow: 9px 9px 0 var(--yellow);
+}
+
+/* Per-show colour override: teal card with pink shadow in Upcoming Shows */
+.event-card.event-card-teal:nth-child(n) {
+  background: var(--teal);
+  box-shadow: 9px 9px 0 var(--pink);
+  color: var(--black);
 }
 
 .event-date {
@@ -1738,8 +1752,9 @@ h1 {
    show — that was the bug that hid the Nook show).
 
    Optional fields on any show:
-     cta:  custom button label (default "GET TICKETS →")
-     note: extra info line on the card and popup
+     cta:   custom button label (default "GET TICKETS →")
+     note:  extra info line on the card and popup
+     color: "teal" makes the calendar tile and the card teal with a pink shadow
 ========================================== */
 
 const events = {
@@ -1944,7 +1959,8 @@ const events = {
       venue: "Siolim, Goa",
       note: "₹2500 · Snacks included",
       url: "https://ig.me/m/goancomedycartel",
-      cta: "DM TO REGISTER →"
+      cta: "DM TO REGISTER →",
+      color: "teal"
     }
   ],
 
@@ -2324,6 +2340,10 @@ function renderCalendar() {
           eventElement.className =
             "event";
 
+          if (event.color === "teal") {
+            eventElement.classList.add("event-teal");
+          }
+
           eventElement.innerHTML = `
             <div class="event-title">
               ${event.title}
@@ -2599,6 +2619,10 @@ function renderEventList() {
 
       card.className =
         "event-card";
+
+      if (event.color === "teal") {
+        card.classList.add("event-card-teal");
+      }
 
 
       card.innerHTML = `
