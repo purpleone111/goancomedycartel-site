@@ -527,6 +527,16 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Optional extra line on a card (fee, "snacks included", etc.) */
+.event-note {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin: -10px 0 20px;
+  text-transform: uppercase;
+}
+
 .ticket-btn {
   display: inline-block;
   background: var(--black);
@@ -1606,6 +1616,11 @@ h1 {
         <span id="modalVenue"></span>
       </div>
 
+      <div class="detail" id="modalNoteRow" style="display: none;">
+        <strong>INFO</strong>
+        <span id="modalNote"></span>
+      </div>
+
     </div>
 
     <a
@@ -1721,6 +1736,10 @@ h1 {
    new key (a plain object can only hold one value per
    key, so a duplicate key silently overwrites the first
    show — that was the bug that hid the Nook show).
+
+   Optional fields on any show:
+     cta:  custom button label (default "GET TICKETS →")
+     note: extra info line on the card and popup
 ========================================== */
 
 const events = {
@@ -1918,6 +1937,17 @@ const events = {
     },
   ],
 
+     "2026-11-22": [
+    {
+      title: "COMEDY WRITING WORKSHOP W/ NAVIN NORONHA",
+      time: "10:00 AM - 5:00 PM",
+      venue: "Siolim, Goa",
+      note: "₹2500 · Snacks included",
+      url: "https://ig.me/m/houseofnoronha",
+      cta: "DM TO REGISTER →"
+    }
+  ],
+
 };
 
 
@@ -1959,6 +1989,12 @@ const modalTime =
 
 const modalVenue =
   document.getElementById("modalVenue");
+
+const modalNoteRow =
+  document.getElementById("modalNoteRow");
+
+const modalNote =
+  document.getElementById("modalNote");
 
 const modalTickets =
   document.getElementById("modalTickets");
@@ -2055,6 +2091,24 @@ function openEvent(key, index) {
 
   modalTickets.href =
     event.url;
+
+  modalTickets.textContent =
+    event.cta || "GET TICKETS →";
+
+
+  /* Optional info line (fee, snacks, etc.) */
+
+  if (event.note) {
+
+    modalNote.textContent = event.note;
+    modalNoteRow.style.display = "flex";
+
+  } else {
+
+    modalNote.textContent = "";
+    modalNoteRow.style.display = "none";
+
+  }
 
 
   /* Hide the ticket button (and show an "ended" label instead)
@@ -2371,7 +2425,9 @@ function renderCalendar() {
 
 /* Converts "7:30 PM" -> "19:30:00" (24-hour, seconds included)
    so it can be combined with the date key into a valid
-   ISO 8601 datetime for the "startDate" field below. */
+   ISO 8601 datetime for the "startDate" field below.
+   For a range like "10:00 AM - 5:00 PM" only the first
+   time is read, which is the start time. */
 
 function to24HourTime(timeString) {
 
@@ -2560,13 +2616,15 @@ function renderEventList() {
           ${event.venue}
         </div>
 
+        ${event.note ? `<div class="event-note">${event.note}</div>` : ""}
+
         <a
           class="ticket-btn"
           href="${event.url}"
           target="_blank"
           rel="noopener noreferrer"
         >
-          GET TICKETS →
+          ${event.cta || "GET TICKETS →"}
         </a>
 
       `;
